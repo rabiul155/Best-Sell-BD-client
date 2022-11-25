@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const LogIn = () => {
     const { logIn, googleLogIn } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const from = location.state?.from?.pathname || '/'
 
     const { register, formState: { errors }, handleSubmit } = useForm();
     const handleSignUp = data => {
@@ -15,6 +19,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('log in successfully')
+                navigate(from, { replace: true })
 
             })
             .catch(error => {
@@ -30,6 +35,7 @@ const LogIn = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('log in successfully')
+                navigate(from, { replace: true })
             })
             .catch(err => console.log('google log in error ', err))
     }
@@ -68,21 +74,21 @@ const LogIn = () => {
                             {errors.password && <p className=' text-red-600'>{errors.password?.message}</p>}
                         </div>
 
-                        <div class="flex justify-between items-center mt-3">
-                            <div class="form-group form-check">
+                        <div className="flex justify-between items-center mt-3">
+                            <div className="form-group form-check">
                                 <input
                                     type="checkbox"
                                     className='mr-2 '
 
 
                                 />
-                                <label class="form-check-label inline-block text-gray-800" for="exampleCheck2"
+                                <label className="form-check-label inline-block text-gray-800" for="exampleCheck2"
                                 >Remember me</label>
 
                             </div>
                             <a
                                 href="#!"
-                                class="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
+                                className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                             >Forgot password?</a>
 
                         </div>

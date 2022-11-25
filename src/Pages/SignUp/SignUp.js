@@ -98,13 +98,29 @@ const SignUp = () => {
 
                         <div className="form-control w-full ">
                             <label className="label">
-                                <span className="label-text">User Image</span>
+                                <span className="label-text">Role</span>
                             </label>
-                            <input type="file"
-                                {...register("photo",
-                                    { required: "Photo is required" })}
-                                className="input m-0 p-1 " placeholder="photo" />
-                            {errors.photo && <p className=' text-red-600'>{errors.photo?.message}</p>}
+                            <select
+                                {...register("role")}
+                                className="select select-bordered w-full max-w-xs">
+                                <option selected>User</option>
+                                <option>Seller</option>
+                            </select>
+                        </div>
+
+                        <div >
+                            <div className="form-control  ">
+                                <label className="label">
+                                    <span className="label-text">User Image</span>
+                                </label>
+                                <input type="file"
+                                    {...register("photo",
+                                        { required: "Photo is required" })}
+                                    className="input m-0 p-1 " placeholder="photo" />
+                                {errors.photo && <p className=' text-red-600'>{errors.photo?.message}</p>}
+                            </div>
+
+
                         </div>
 
                         <div className="form-control w-full max-w-xs">

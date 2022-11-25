@@ -18,7 +18,7 @@ const Navbar = () => {
 
     const menuItem =
         <>
-            <li><Link>Item 1</Link></li>
+            <li><Link to='/categories'>Categroies</Link></li>
             <li><Link>Item 3</Link></li>
 
         </>
@@ -36,7 +36,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                <Link className="btn btn-ghost normal-case font-bold text-cyan-500 text-xl">Best Sell BD</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

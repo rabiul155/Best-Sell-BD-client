@@ -31,26 +31,28 @@ const AuthProvider = ({ children }) => {
     }
 
     const logOut = () => {
-        localStorage.removeItem('jwtToken');
         setLoading(true);
         return signOut(auth)
     }
 
     const updateUser = (userInfo) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, userInfo)
     }
 
 
     useEffect(() => {
+
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
             setLoading(false);
         });
+
         return () => unsubscribe();
     }, [])
 
 
-    const authInfo = { createUser, logIn, user, logOut, updateUser, googleLogIn };
+    const authInfo = { createUser, logIn, user, logOut, updateUser, googleLogIn, loading };
     return (
 
         <AuthContext.Provider value={authInfo}>
