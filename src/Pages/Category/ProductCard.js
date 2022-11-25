@@ -11,8 +11,8 @@ const ProductCard = ({ product, setBooking }) => {
                 <div className="card-body ">
                     <h2 className="card-title">{productName}</h2>
                     <div className=' flex justify-between font-bold'>
-                        <p>Orgila Price : {orginalPrice}</p>
-                        <p>Resale Price : {resalePrice}</p>
+                        <p>Orgila Price : ${orginalPrice}</p>
+                        <p>Resale Price : ${resalePrice}</p>
                     </div>
                     <p>{about}</p>
                     <div className=' flex justify-between'>

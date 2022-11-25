@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import Main from "../layout/Main";
+import AddProduct from "../Pages/AddProduct/AddProduct";
 import Category from "../Pages/Category/Category";
 import Home from "../Pages/Home/Home/Home";
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: '/myOrder',
                 element: <PrivateRoute><MyOrder></MyOrder></PrivateRoute>
+            },
+            {
+                path: '/addProduct',
+                element: <AddProduct></AddProduct>
             }
 
         ]
