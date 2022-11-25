@@ -20,6 +20,8 @@ const Navbar = () => {
         <>
             <li><Link to='/categories'>Categroies</Link></li>
             <li><Link>Item 3</Link></li>
+            <li><Link to='/myOrder'>My Order</Link></li>
+
 
         </>
 
