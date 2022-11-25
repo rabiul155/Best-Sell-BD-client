@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const SignUp = () => {
 
     const { createUser, updateUser, googleLogIn } = useContext(AuthContext);
     const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
-
+    const navigate = useNavigate();
 
 
     const { register, formState: { errors }, handleSubmit } = useForm();
+
     const handleSignUp = data => {
         console.log(data)
 
@@ -39,11 +40,12 @@ const SignUp = () => {
                                 displayName: data.name,
                                 photoURL: imgData.data.url
                             }
-                            console.log(userInfo);
+
 
                             updateUser(userInfo)
                                 .then(() => {
                                     toast.success('user updated')
+                                    saveUser(user.displayName, user.email, data.role)
                                 })
                                 .catch(err => console.log(err))
                         }
@@ -64,9 +66,38 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('log in successfully')
+                const role = 'buyer';
+                saveUser(user.displayName, user.email, role);
             })
             .catch(err => console.log('google log in error ', err))
     }
+
+
+    const saveUser = (name, email, role) => {
+        const user = {
+            name,
+            email,
+            role
+
+        }
+        console.log(user);
+        fetch('http://localhost:5000/users', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                console.log('user stored in database')
+                navigate('/')
+
+            })
+    }
+
+
 
 
     return (
@@ -103,8 +134,8 @@ const SignUp = () => {
                             <select
                                 {...register("role")}
                                 className="select select-bordered w-full max-w-xs">
-                                <option selected>User</option>
-                                <option>Seller</option>
+                                <option selected>buyer</option>
+                                <option>seller</option>
                             </select>
                         </div>
 

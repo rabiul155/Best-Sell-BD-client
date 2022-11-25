@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home/Home";
 
 import LogIn from "../Pages/LogIn/LogIn";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/category/:brand',
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.brand}`),
-                element: <Category></Category>
+                element: <PrivateRoute><Category></Category></PrivateRoute>
 
             }
 

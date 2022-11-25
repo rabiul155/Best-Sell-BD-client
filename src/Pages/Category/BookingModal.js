@@ -3,13 +3,14 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
 
 const BookingModal = ({ booking, setBooking }) => {
-    const { productName, resalePrice, location } = booking;
+    const { productName, resalePrice } = booking;
     const { user } = useContext(AuthContext);
 
 
     const handleSubmit = event => {
         event.preventDefault()
         const phone = event.target.phone.value;
+        const location = event.target.location.value;
         const bookingProduct = {
             name: user?.displayName,
             email: user?.email,
@@ -59,7 +60,7 @@ const BookingModal = ({ booking, setBooking }) => {
                             <input readOnly defaultValue={user?.email} type="text" placeholder="Type here" className="input input-bordered w-full" />
                             <input readOnly defaultValue={productName} type="text" placeholder="Type here" className="input input-bordered w-full" />
                             <input readOnly defaultValue={resalePrice} type="text" placeholder="Type here" className="input input-bordered w-full" />
-                            <input readOnly defaultValue={location} type="text" placeholder="Type here" className="input input-bordered w-full" />
+                            <input name='location' required type="text" placeholder="Please add meeting location near seller area" className="input input-bordered w-full" />
                             <input name='phone' required type="text" placeholder="Please Add Your phone Number" className="input input-bordered w-full" />
                             <input className=' btn btn-primary w-full' type="submit" value="Booking" />
                         </form>
