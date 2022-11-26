@@ -27,7 +27,7 @@ const ProductCard = ({ product, setBooking }) => {
                         <label
                             className="btn btn-primary"
                             htmlFor="my-modal"
-                            onClick={() => setBooking(product)}> Buy Now</label>
+                            onClick={() => setBooking(product)}> Book Now</label>
                     </div>
                 </div>
             </div>

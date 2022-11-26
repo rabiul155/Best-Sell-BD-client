@@ -18,7 +18,9 @@ const BookingModal = ({ booking, setBooking }) => {
             resalePrice,
             location,
             phone,
-            picture
+            picture,
+
+
         }
         console.log(bookingProduct);
 

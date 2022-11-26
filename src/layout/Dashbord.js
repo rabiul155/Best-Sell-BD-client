@@ -27,6 +27,7 @@ const Dashbord = () => {
         </>
     }
     else if (role === 'seller') {
+
         menuItem = <>
             <li><Link to='/dashbord/addProduct'>Add Product  </Link></li>
             <li><Link to='/dashbord/myProduct'>My Product </Link></li>
@@ -39,14 +40,13 @@ const Dashbord = () => {
     }
 
 
-
-
     return (
         <div>
             <Navbar></Navbar>
             <div className="drawer drawer-mobile">
                 <input id="dashbord-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content ">
+
                     <Outlet></Outlet>
 
                 </div>
@@ -57,8 +57,6 @@ const Dashbord = () => {
                         {
                             menuItem
                         }
-
-
 
                     </ul>
 

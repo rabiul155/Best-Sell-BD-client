@@ -8,14 +8,16 @@ const Category = () => {
     const products = useLoaderData();
 
     return (
-        <div>
-            {
-                products.map(product => <ProductCard
-                    key={product._id}
-                    product={product}
-                    setBooking={setBooking}
-                ></ProductCard>)
-            }
+        <div className=' m-5'>
+            <div className=' grid sm:grid-cols-1 lg:grid-cols-3'>
+                {
+                    products.map(product => <ProductCard
+                        key={product._id}
+                        product={product}
+                        setBooking={setBooking}
+                    ></ProductCard>)
+                }
+            </div>
 
             {
                 booking &&

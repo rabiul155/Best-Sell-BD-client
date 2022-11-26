@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 
 
 const AddProduct = () => {
+
+    const navigate = useNavigate();
+
+    const { user } = useContext(AuthContext);
+
+    const date = new Date().toLocaleDateString()
 
     const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
     const { register, handleSubmit } = useForm();
 
     const handleStoreProduct = data => {
-        console.log(data)
 
         const image = data.picture[0];
         const formData = new FormData()
@@ -48,6 +55,10 @@ const AddProduct = () => {
                         sellerName,
                         phone,
                         about,
+                        date,
+                        advertise: false,
+                        status: 'available',
+                        email: user?.email
 
                     }
 
@@ -63,6 +74,8 @@ const AddProduct = () => {
                             console.log(data)
                             console.log('product stored in database')
                             toast.success('product stored in db')
+                            navigate('/dashbord/myProduct')
+
 
                         })
 
