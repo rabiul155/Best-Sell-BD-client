@@ -49,6 +49,7 @@ const Dashbord = () => {
 
                     <Outlet></Outlet>
 
+
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashbord-drawer" className="drawer-overlay"></label>

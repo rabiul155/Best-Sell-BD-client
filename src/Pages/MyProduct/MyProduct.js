@@ -1,6 +1,7 @@
 import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 
@@ -9,7 +10,7 @@ const MyProduct = () => {
 
     const { user } = useContext(AuthContext);
 
-    const { data: myProduct = [], isLoading } = useQuery({
+    const { data: myProduct = [], isLoading, refetch } = useQuery({
         queryKey: ['myProduct', user?.email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/category?email=${user?.email}`)
@@ -22,6 +23,47 @@ const MyProduct = () => {
 
     if (isLoading) {
         return <Loading></Loading>
+    }
+
+    const handleDelete = (_id) => {
+        const confirm = window.confirm('do you want to delete this product')
+        if (confirm) {
+            fetch(`http://localhost:5000/category/${_id}`, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    toast.success("item deleted")
+                    refetch();
+                })
+        }
+
+    }
+
+    const handleUpdate = _id => {
+        const confirm = window.confirm('do you want to advertise this product')
+        const advertise = {
+            advertise: true
+        }
+
+
+        if (confirm) {
+            fetch(`http://localhost:5000/category/${_id}`, {
+                method: "PUT",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(advertise)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    toast.success("added to popular product")
+                    refetch();
+                })
+        }
+
     }
 
     return (
@@ -54,8 +96,8 @@ const MyProduct = () => {
                                     </td>
                                     <td>{product.productName}</td>
                                     <td>{product.status}</td>
-                                    <td><button className="btn btn-sm btn-primary">Advertise</button></td>
-                                    <td><button className="btn btn-sm">Delete</button></td>
+                                    <td><button onClick={() => handleUpdate(product._id)} className="btn btn-sm btn-primary">Advertise</button></td>
+                                    <td><button onClick={() => handleDelete(product._id)} className="btn btn-sm">Delete</button></td>
                                 </tr>
                             )
                         }
