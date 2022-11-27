@@ -37,6 +37,20 @@ const MySeller = () => {
 
     }
 
+    const handleVerify = email => {
+        fetch(`http://localhost:5000/verify/${email}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success('user verified');
+            })
+    }
+
     return (
         <div>
             <div className="overflow-x-auto">
@@ -48,6 +62,7 @@ const MySeller = () => {
                             <th>Picture</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Verify</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -60,12 +75,13 @@ const MySeller = () => {
                                     <td>
                                         <div className="avatar">
                                             <div className="w-24 rounded-full">
-                                                <img src={seller?.photo} alt='none' />
+                                                <img src={seller?.picture} alt='none' />
                                             </div>
                                         </div>
                                     </td>
                                     <td>{seller.name}</td>
                                     <td>{seller.email}</td>
+                                    <td><button onClick={() => handleVerify(seller.email)} className=' btn btn-sm'>Verify</button></td>
                                     <td><button onClick={() => handleDelete(seller._id)} className="btn btn-sm">Delete</button></td>
                                 </tr>
 

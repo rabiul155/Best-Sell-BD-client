@@ -1,8 +1,9 @@
 import React from 'react';
+import { FaCheckCircle } from "react-icons/fa";
 
 const ProductCard = ({ product, setBooking }) => {
     console.log(product);
-    const { about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime } = product;
+    const { about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
     return (
 
         <div>
@@ -20,7 +21,13 @@ const ProductCard = ({ product, setBooking }) => {
                         <p>Use Time : {useTime}</p>
                     </div>
                     <div className=' flex justify-between'>
-                        <p className=' font-semibold'>Seller : {sellerName}</p>
+                        <p className=' font-semibold'>
+                            Seller :
+                            {
+                                verify &&
+                                <span className='text-blue-700 '><FaCheckCircle className='inline-block mx-1'></FaCheckCircle></span>
+                            }
+                            {sellerName}</p>
                         <p>Location : {location}</p>
                     </div>
                     <p>Phone : {phone}</p>

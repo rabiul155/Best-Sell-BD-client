@@ -45,7 +45,7 @@ const SignUp = () => {
                             updateUser(userInfo)
                                 .then(() => {
                                     toast.success('user updated')
-                                    saveUser(user.displayName, user.email, data.role)
+                                    saveUser(user.displayName, user.email, data.role, imgData.data.url)
                                 })
                                 .catch(err => console.log(err))
                         }
@@ -73,11 +73,12 @@ const SignUp = () => {
     }
 
 
-    const saveUser = (name, email, role) => {
+    const saveUser = (name, email, role, picture) => {
         const user = {
             name,
             email,
-            role
+            role,
+            picture
 
         }
         console.log(user);
