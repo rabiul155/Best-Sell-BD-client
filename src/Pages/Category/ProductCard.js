@@ -22,12 +22,12 @@ const ProductCard = ({ product, setBooking }) => {
                     </div>
                     <div className=' flex justify-between'>
                         <p className=' font-semibold'>
-                            Seller :
+                            Seller : {sellerName}
                             {
                                 verify &&
                                 <span className='text-blue-700 '><FaCheckCircle className='inline-block mx-1'></FaCheckCircle></span>
                             }
-                            {sellerName}</p>
+                        </p>
                         <p>Location : {location}</p>
                     </div>
                     <p>Phone : {phone}</p>

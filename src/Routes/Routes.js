@@ -3,6 +3,7 @@ import Dashbord from "../layout/Dashbord";
 import Main from "../layout/Main";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import Category from "../Pages/Category/Category";
+import ErroePage from "../Pages/ErrorPage/ErroePage";
 import Home from "../Pages/Home/Home/Home";
 import LogIn from "../Pages/LogIn/LogIn";
 import MyBuyer from "../Pages/MyBuyer/MyBuyer";
@@ -18,6 +19,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: '/',
+        errorElement: <ErroePage></ErroePage>,
         element: <Main></Main>,
         children: [
             {
@@ -53,6 +55,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashbord',
+        errorElement: <ErroePage></ErroePage>,
         element: <Dashbord></Dashbord>,
         children: [
             {
