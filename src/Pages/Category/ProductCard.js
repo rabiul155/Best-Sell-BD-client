@@ -6,8 +6,8 @@ const ProductCard = ({ product, setBooking }) => {
     return (
 
         <div>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                <figure><img src={picture} alt="Shoes" /></figure>
+            <div className="card card-compact w-96 bg-base-100 shadow-xl my-4">
+                <figure><img className=' w-96 h-80' src={picture} alt="Shoes" /></figure>
                 <div className="card-body ">
                     <h2 className="card-title">{productName}</h2>
                     <div className=' flex justify-between font-bold'>
@@ -19,8 +19,10 @@ const ProductCard = ({ product, setBooking }) => {
                         <p>Condition : {condition}</p>
                         <p>Use Time : {useTime}</p>
                     </div>
-                    <p className=' font-semibold'>Seller : {sellerName}</p>
-                    <p>Location : {location}</p>
+                    <div className=' flex justify-between'>
+                        <p className=' font-semibold'>Seller : {sellerName}</p>
+                        <p>Location : {location}</p>
+                    </div>
                     <p>Phone : {phone}</p>
                     <p>Date : {date}</p>
                     <div className="card-actions justify-end">

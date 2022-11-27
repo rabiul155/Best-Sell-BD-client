@@ -34,8 +34,11 @@ const Dashbord = () => {
         </>
     }
 
-    else {
+    else if (role === 'admin') {
         menuItem = <>
+            <li><Link to='/dashbord/myBuyer'>My Buyer  </Link></li>
+
+            <li><Link to='/dashbord/mySeller'>My Seller  </Link></li>
         </>
     }
 

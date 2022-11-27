@@ -96,7 +96,7 @@ const MyProduct = () => {
                                     </td>
                                     <td>{product.productName}</td>
                                     <td>{product.status}</td>
-                                    <td><button onClick={() => handleUpdate(product._id)} className="btn btn-sm btn-primary">Advertise</button></td>
+                                    <td><button disabled={product.advertise} onClick={() => handleUpdate(product._id)} className="btn btn-sm btn-primary">Advertise</button></td>
                                     <td><button onClick={() => handleDelete(product._id)} className="btn btn-sm">Delete</button></td>
                                 </tr>
                             )
