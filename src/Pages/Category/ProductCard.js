@@ -1,9 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { FaCheckCircle } from "react-icons/fa";
+import { AuthContext } from '../../context/AuthProvider';
 
 const ProductCard = ({ product, setBooking }) => {
     console.log(product);
-    const { about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
+    const { user } = useContext(AuthContext);
+
+    const { _id, about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
+
+    const handleWishlist = (_id) => {
+        const wishlitProduct = {
+
+            email: user?.email,
+            picture,
+            productName,
+            resalePrice
+        }
+        fetch('http://localhost:5000/wishlist', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(wishlitProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success('porduct added to wishlist')
+            })
+
+
+    }
     return (
 
         <div>
@@ -33,6 +61,7 @@ const ProductCard = ({ product, setBooking }) => {
                     <p>Phone : {phone}</p>
                     <p>Date : {date}</p>
                     <div className="card-actions justify-end">
+                        <button onClick={() => handleWishlist(_id)} className=' btn btn-secondary'>Add To Wishlist</button>
                         <label
                             className="btn btn-primary"
                             htmlFor="my-modal"

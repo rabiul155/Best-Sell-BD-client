@@ -11,6 +11,7 @@ import MyBuyer from "../Pages/MyBuyer/MyBuyer";
 import MyOrder from "../Pages/MyOrder/MyOrder";
 import MyProduct from "../Pages/MyProduct/MyProduct";
 import MySeller from "../Pages/MySeller/MySeller";
+import MyWishlist from "../Pages/MyWishlist/MyWishlist";
 import SignUp from "../Pages/SignUp/SignUp";
 import DashbordRoute from "./DashbordRoute/DashbordRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashbord/myOrder',
                 element: <DashbordRoute><MyOrder></MyOrder></DashbordRoute>
+            },
+            {
+                path: '/dashbord/myWishlist',
+                element: <DashbordRoute><MyWishlist></MyWishlist></DashbordRoute>
             },
             {
                 path: '/dashbord/addProduct',
