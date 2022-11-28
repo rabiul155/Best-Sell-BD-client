@@ -41,7 +41,6 @@ const SignUp = () => {
                                 photoURL: imgData.data.url
                             }
 
-
                             updateUser(userInfo)
                                 .then(() => {
                                     toast.success('user updated')
@@ -67,7 +66,7 @@ const SignUp = () => {
                 console.log(user)
                 toast.success('log in successfully')
                 const role = 'buyer';
-                saveUser(user.displayName, user.email, role);
+                saveUser(user.displayName, user.email, role, user.photoURL);
             })
             .catch(err => console.log('google log in error ', err))
     }
@@ -82,6 +81,7 @@ const SignUp = () => {
 
         }
         console.log(user);
+
         fetch('http://localhost:5000/users', {
             method: "POST",
             headers: {
@@ -92,11 +92,25 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                console.log('user stored in database')
-                navigate('/')
+                toast.success('user stored in database')
+                getJWT(user?.email)
 
             })
     }
+
+
+    const getJWT = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('jwtToken', data.accessToken)
+                    toast.success('get jwt from server')
+                    navigate('/')
+                }
+            })
+    }
+
 
 
 

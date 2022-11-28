@@ -13,7 +13,11 @@ const MyProduct = () => {
     const { data: myProduct = [], isLoading, refetch } = useQuery({
         queryKey: ['myProduct', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/category?email=${user?.email}`)
+            const res = await fetch(`http://localhost:5000/category?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('jwtToken')}`
+                }
+            })
             const data = await res.json();
             return data
         }
