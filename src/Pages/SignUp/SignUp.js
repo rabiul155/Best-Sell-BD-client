@@ -64,7 +64,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                toast.success('log in successfully')
+                toast.success('lonin with google successfully')
                 const role = 'buyer';
                 saveUser(user.displayName, user.email, role, user.photoURL);
             })

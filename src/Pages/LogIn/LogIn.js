@@ -12,14 +12,15 @@ const LogIn = () => {
     const from = location.state?.from?.pathname || '/'
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const handleSignUp = data => {
+    const handleLogIn = data => {
         console.log(data)
         logIn(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 toast.success('log in successfully')
-                navigate(from, { replace: true })
+
+                getJWT(user?.email)
 
             })
             .catch(error => {
@@ -34,18 +35,64 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                toast.success('log in successfully')
-                navigate(from, { replace: true })
+                toast.success('login with google successfully')
+                const role = 'buyer';
+                saveUser(user.displayName, user.email, role, user.photoURL);
             })
             .catch(err => console.log('google log in error ', err))
     }
+
+
+    const saveUser = (name, email, role, picture) => {
+        const user = {
+            name,
+            email,
+            role,
+            picture
+
+        }
+        console.log(user);
+
+        fetch('http://localhost:5000/users', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success('user stored in database')
+                getJWT(user?.email)
+
+            })
+    }
+
+
+    const getJWT = email => {
+        fetch(`http://localhost:5000/jwt?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.accessToken) {
+                    localStorage.setItem('jwtToken', data.accessToken)
+                    toast.success('get jwt from server')
+                    navigate(from, { replace: true })
+                }
+            })
+    }
+
+
+
+
+
     return (
 
         <div>
             <div className=' h-[800px] flex justify-center'>
                 <div className=' w-96 p-7'>
                     <h2 className=' text-3xl font-bold text-secondary text-center'>LogIn</h2>
-                    <form onSubmit={handleSubmit(handleSignUp)}>
+                    <form onSubmit={handleSubmit(handleLogIn)}>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">

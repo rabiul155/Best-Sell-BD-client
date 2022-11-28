@@ -58,7 +58,7 @@ const MySeller = () => {
 
                     <thead>
                         <tr>
-                            <th>Index</th>
+                            <th >Index</th>
                             <th>Picture</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -71,18 +71,18 @@ const MySeller = () => {
                         {
                             mySeller.map((seller, index) =>
                                 <tr>
-                                    <th>{index + 1}</th>
+                                    <th >{index + 1}</th>
                                     <td>
                                         <div className="avatar">
-                                            <div className="w-24 rounded-full">
+                                            <div className="w-12 md:w-24 rounded-full">
                                                 <img src={seller?.picture} alt='none' />
                                             </div>
                                         </div>
                                     </td>
                                     <td>{seller.name}</td>
-                                    <td>{seller.email}</td>
-                                    <td><button onClick={() => handleVerify(seller.email)} className=' btn btn-sm'>Verify</button></td>
-                                    <td><button onClick={() => handleDelete(seller._id)} className="btn btn-sm">Delete</button></td>
+                                    <td >{seller.email}</td>
+                                    <td><button onClick={() => handleVerify(seller.email)} className=' btn btn-xs md:btn-sm'>Verify</button></td>
+                                    <td><button onClick={() => handleDelete(seller._id)} className="btn btn-xs md:btn-sm">Delete</button></td>
                                 </tr>
 
                             )
