@@ -17,7 +17,7 @@ const ProductCard = ({ product, setBooking }) => {
             productName,
             resalePrice
         }
-        fetch('http://localhost:5000/wishlist', {
+        fetch('https://78-laptop-resalse-server.vercel.app/wishlist', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

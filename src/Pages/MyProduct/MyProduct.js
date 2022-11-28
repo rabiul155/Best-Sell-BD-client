@@ -13,7 +13,7 @@ const MyProduct = () => {
     const { data: myProduct = [], isLoading, refetch } = useQuery({
         queryKey: ['myProduct', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/category?email=${user?.email}`, {
+            const res = await fetch(`https://78-laptop-resalse-server.vercel.app/category?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('jwtToken')}`
                 }
@@ -32,7 +32,7 @@ const MyProduct = () => {
     const handleDelete = (_id) => {
         const confirm = window.confirm('do you want to delete this product')
         if (confirm) {
-            fetch(`http://localhost:5000/category/${_id}`, {
+            fetch(`https://78-laptop-resalse-server.vercel.app/category/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -53,7 +53,7 @@ const MyProduct = () => {
 
 
         if (confirm) {
-            fetch(`http://localhost:5000/category/${_id}`, {
+            fetch(`https://78-laptop-resalse-server.vercel.app/category/${_id}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'

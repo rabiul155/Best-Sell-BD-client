@@ -10,7 +10,7 @@ const MyBuyer = () => {
     const { data: myBuyer = [], isLoading, refetch } = useQuery({
         queryKey: ['myBuyer'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?role=buyer`)
+            const res = await fetch(`https://78-laptop-resalse-server.vercel.app/users?role=buyer`)
             const data = await res.json();
             return data
         }
@@ -23,7 +23,7 @@ const MyBuyer = () => {
     const handleDelete = _id => {
         const permission = window.confirm('are you sure to delete this user ')
         if (permission) {
-            fetch(`http://localhost:5000/users/${_id}`, {
+            fetch(`https://78-laptop-resalse-server.vercel.app/users/${_id}`, {
                 method: "DELETE"
 
             })

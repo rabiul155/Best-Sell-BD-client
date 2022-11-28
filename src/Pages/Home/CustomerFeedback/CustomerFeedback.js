@@ -12,7 +12,7 @@ const CustomerFeedback = () => {
     const { data: feedback = [], refetch } = useQuery({
         queryKey: ['feedback'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/feedback')
+            const res = await fetch('https://78-laptop-resalse-server.vercel.app/feedback')
             const data = await res.json();
             return data;
 
@@ -35,7 +35,7 @@ const CustomerFeedback = () => {
         }
         console.log(feedback)
 
-        fetch('http://localhost:5000/feedback', {
+        fetch('https://78-laptop-resalse-server.vercel.app/feedback', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

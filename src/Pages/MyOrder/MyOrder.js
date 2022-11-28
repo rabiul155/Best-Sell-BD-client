@@ -13,7 +13,7 @@ const MyOrder = () => {
     const { data: myOrder = [], isLoading } = useQuery({
         queryKey: ['myOrder', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myOrder?email=${user?.email}`, {
+            const res = await fetch(`https://78-laptop-resalse-server.vercel.app/myOrder?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('jwtToken')}`
                 }

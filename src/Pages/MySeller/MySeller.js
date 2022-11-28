@@ -9,7 +9,7 @@ const MySeller = () => {
     const { data: mySeller = [], isLoading, refetch } = useQuery({
         queryKey: ['mySeller'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?role=seller`)
+            const res = await fetch(`https://78-laptop-resalse-server.vercel.app/users?role=seller`)
             const data = await res.json();
             return data
         }
@@ -22,7 +22,7 @@ const MySeller = () => {
     const handleDelete = _id => {
         const permission = window.confirm('are you sure to delete this user ')
         if (permission) {
-            fetch(`http://localhost:5000/users/${_id}`, {
+            fetch(`https://78-laptop-resalse-server.vercel.app/users/${_id}`, {
                 method: "DELETE"
 
             })
@@ -38,7 +38,7 @@ const MySeller = () => {
     }
 
     const handleVerify = email => {
-        fetch(`http://localhost:5000/verify/${email}`, {
+        fetch(`https://78-laptop-resalse-server.vercel.app/verify/${email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
