@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser, updateUser, googleLogIn } = useContext(AuthContext);
+    const { createUser, updateUser, googleLogIn, logOut } = useContext(AuthContext);
     const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
     const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ const SignUp = () => {
 
                             updateUser(userInfo)
                                 .then(() => {
-                                    toast.success('user updated')
+
                                     saveUser(user.displayName, user.email, data.role, imgData.data.url)
                                 })
                                 .catch(err => console.log(err))
@@ -92,7 +92,7 @@ const SignUp = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                toast.success('user stored in database')
+
                 getJWT(user?.email)
 
             })
@@ -105,8 +105,17 @@ const SignUp = () => {
             .then(data => {
                 if (data.accessToken) {
                     localStorage.setItem('jwtToken', data.accessToken)
-                    toast.success('get jwt from server')
-                    navigate('/')
+
+                    navigate('/');
+                    window.location.reload();
+                    // logOut()
+                    //     .then(() => {
+                    //         navigate('/')
+                    //     })
+                    //     .catch(error => {
+                    //         console.error('logout error', error)
+                    //     })
+
                 }
             })
     }
