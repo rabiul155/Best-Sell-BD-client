@@ -22,6 +22,9 @@ const MyOrder = () => {
         }
     })
 
+
+    console.log(myOrder);
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -34,15 +37,20 @@ const MyOrder = () => {
     }
 
 
+
+
     return (
         <div>
+
             {
                 myOrder.map(order => <MyOrderCard
                     key={order._id}
                     order={order}
                 ></MyOrderCard>)
             }
+
         </div>
+
     );
 };
 

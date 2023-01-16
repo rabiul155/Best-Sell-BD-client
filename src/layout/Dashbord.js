@@ -22,7 +22,7 @@ const Dashbord = () => {
 
     if (role === 'buyer') {
         menuItem = <>
-            <li><Link to='/dashbord/myOrder'>MyOrder </Link></li>
+            <li><Link to='/dashbord/myOrder'>MyOrder</Link></li>
             <li><Link to='/dashbord/myWishlist'>MyWishList </Link></li>
         </>
     }
