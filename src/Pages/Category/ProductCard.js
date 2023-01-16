@@ -60,8 +60,10 @@ const ProductCard = ({ product, setBooking }) => {
                     </div>
                     <p>Phone : {phone}</p>
                     <p>Date : {date}</p>
+
                     <div className="card-actions justify-end">
                         <button onClick={() => handleWishlist(_id)} className=' btn btn-secondary'>Add To Wishlist</button>
+
                         <label
                             className="btn btn-primary"
                             htmlFor="my-modal"

@@ -1,5 +1,4 @@
 
-import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
@@ -22,6 +21,7 @@ const MyOrder = () => {
             return data;
         }
     })
+
     if (isLoading) {
         return <Loading></Loading>
     }
