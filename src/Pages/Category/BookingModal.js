@@ -4,6 +4,7 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const BookingModal = ({ booking, setBooking }) => {
     const { productName, resalePrice, picture } = booking;
+
     const { user } = useContext(AuthContext);
 
 
@@ -19,6 +20,8 @@ const BookingModal = ({ booking, setBooking }) => {
             location,
             phone,
             picture,
+            quantity: 1,
+            date: new Date().toLocaleDateString()
 
 
         }

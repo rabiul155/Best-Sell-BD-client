@@ -3,6 +3,7 @@ import Dashbord from "../layout/Dashbord";
 import Main from "../layout/Main";
 import AddProduct from "../Pages/AddProduct/AddProduct";
 import Blog from "../Pages/Blog/Blog";
+import Cart from "../Pages/Cart/Cart";
 import Category from "../Pages/Category/Category";
 import ErroePage from "../Pages/ErrorPage/ErroePage";
 import Home from "../Pages/Home/Home/Home";
@@ -41,12 +42,16 @@ const router = createBrowserRouter([
             {
                 path: '/category/:brand',
                 loader: ({ params }) => fetch(`https://78-laptop-resalse-server.vercel.app/category/${params.brand}`),
-                element: <PrivateRoute><Category></Category></PrivateRoute>
+                element: <Category></Category>
 
             },
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/cart',
+                element: <Cart></Cart>
             }
 
 

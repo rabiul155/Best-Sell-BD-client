@@ -76,7 +76,7 @@ const LogIn = () => {
             .then(data => {
                 if (data.accessToken) {
                     localStorage.setItem('jwtToken', data.accessToken)
-                    toast.success('get jwt from server')
+
                     navigate(from, { replace: true })
                 }
             })
@@ -91,7 +91,7 @@ const LogIn = () => {
         <div>
             <div className=' h-[800px] flex justify-center'>
                 <div className=' w-96 p-7'>
-                    <h2 className=' text-3xl font-bold text-secondary text-center'>LogIn</h2>
+                    <h2 className=' text-3xl font-bold text-primary text-center'>LogIn</h2>
                     <form onSubmit={handleSubmit(handleLogIn)}>
 
                         <div className="form-control w-full max-w-xs">
@@ -140,12 +140,24 @@ const LogIn = () => {
 
                         </div>
 
-                        <input className='btn btn-accent w-full mt-6' value='LogIn' type="submit" />
+                        <input className='btn btn-primary w-full mt-6' value='LogIn' type="submit" />
                     </form>
                     <p className='mt-2'>Don't have an accoutn <Link className=' text-primary underline ' to='/signup'>SignUp</Link></p>
                     <div className="divider">or</div>
                     <button onClick={handleGoogle} className=' btn btn-outline w-full uppercase'>Continue with google</button>
                 </div>
+            </div>
+            <div className=' lg:absolute top-20 right-6'>
+                <p>Credential Info</p>
+                <p>Buyer : </p>
+                <p>Email : buyer@gmail.com</p>
+                <p>password : 123456</p>
+                <p>Seller : </p>
+                <p>Email : seller@gmail.com</p>
+                <p>password : 123456</p>
+                <p>Admin : </p>
+                <p>Email : admin@gmail.com</p>
+                <p>password : 123456</p>
             </div>
         </div>
     );

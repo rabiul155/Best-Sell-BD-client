@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser, updateUser, googleLogIn, logOut } = useContext(AuthContext);
+    const { createUser, updateUser, googleLogIn } = useContext(AuthContext);
     const imageHostingKey = process.env.REACT_APP_imgbb_api_key;
     const navigate = useNavigate();
 
@@ -107,6 +107,8 @@ const SignUp = () => {
                     localStorage.setItem('jwtToken', data.accessToken)
 
                     navigate('/');
+
+
                     window.location.reload();
                     // logOut()
                     //     .then(() => {
@@ -122,32 +124,30 @@ const SignUp = () => {
 
 
 
-
-
     return (
         <div>
-            <div className=' h-[800px] flex justify-center '>
-                <div className=' w-96 p-7'>
-                    <h2 className=' text-3xl font-bold text-secondary text-center'>SignUp</h2>
+            <div className='flex justify-center '>
+                <div className='lg:w-[400px] py-6 '>
+                    <h2 className=' text-3xl font-bold text-primary text-center'>SignUp</h2>
                     <form onSubmit={handleSubmit(handleSignUp)}>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text"
                                 {...register("name",
                                     { required: "Name is required" })}
-                                className="input input-bordered w-full max-w-xs" placeholder="name" />
+                                className="input input-bordered w-full " placeholder="name" />
                             {errors.name && <p className=' text-red-600'>{errors.name?.message}</p>}
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email"
                                 {...register("email",
                                     { required: "Email Address is required" })}
-                                className="input input-bordered w-full max-w-xs" placeholder="email" />
+                                className="input input-bordered w-full" placeholder="email" />
                             {errors.email && <p className=' text-red-600'>{errors.email?.message}</p>}
                         </div>
 
@@ -157,7 +157,7 @@ const SignUp = () => {
                             </label>
                             <select
                                 {...register("role")}
-                                className="select select-bordered w-full max-w-xs">
+                                className="select select-bordered w-full">
                                 <option selected>buyer</option>
                                 <option>seller</option>
                             </select>
@@ -171,14 +171,14 @@ const SignUp = () => {
                                 <input type="file"
                                     {...register("photo",
                                         { required: "Photo is required" })}
-                                    className="input m-0 p-1 " placeholder="photo" />
+                                    className="file-input file-input-bordered w-full" placeholder="photo" />
                                 {errors.photo && <p className=' text-red-600'>{errors.photo?.message}</p>}
                             </div>
 
 
                         </div>
 
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full ">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -190,11 +190,11 @@ const SignUp = () => {
 
 
                                     })}
-                                className="input input-bordered w-full max-w-xs" placeholder="**********" />
+                                className="input input-bordered w-full " placeholder="**********" />
                             {errors.password && <p className=' text-red-600'>{errors.password?.message}</p>}
                         </div>
 
-                        <input className='btn btn-accent w-full mt-6' value='SignUp' type="submit" />
+                        <input className='btn btn-primary w-full mt-6' value='SignUp' type="submit" />
                     </form>
                     <p className=' mt-2'>Already have an account <Link className=' text-primary underline' to='/login'>logIn</Link></p>
                     <div className="divider">or</div>

@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { HiMenuAlt1 } from "react-icons/hi";
+import { HiOutlineShoppingCart } from "react-icons/hi";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -11,6 +12,7 @@ const Navbar = () => {
         logOut()
             .then(() => {
                 toast.success('logOut succefully ')
+                window.location.reload();
             })
             .catch(error => {
                 console.error('logout error', error)
@@ -21,8 +23,11 @@ const Navbar = () => {
         <>
 
             <li><Link to='/'>Home</Link></li>
+            <li><Link >Category</Link></li>
+            <li><Link to='/cart'>Cart<HiOutlineShoppingCart></HiOutlineShoppingCart></Link></li>
             <li><Link to='/dashbord'>Dashbord</Link></li>
-            <li><Link to='/blog'>Blog</Link></li>
+            {/* <li><Link to='/blog'>Blog</Link></li> */}
+
 
 
 
@@ -41,7 +46,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case font-bold text-secondary text-xl">Best Sell BD</Link>
+                <Link className="btn btn-ghost normal-case font-bold text-xl">Best Sell BD</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

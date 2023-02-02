@@ -10,26 +10,45 @@ const ProductCard = ({ product, setBooking }) => {
     const { _id, about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
 
     const handleWishlist = (_id) => {
-        const wishlitProduct = {
+        if (user?.uid) {
+            const wishlitProduct = {
 
-            email: user?.email,
-            picture,
-            productName,
-            resalePrice
-        }
-        fetch('https://78-laptop-resalse-server.vercel.app/wishlist', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(wishlitProduct)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                toast.success('porduct added to wishlist')
+                email: user?.email,
+                picture,
+                productName,
+                resalePrice
+            }
+            fetch('https://78-laptop-resalse-server.vercel.app/wishlist', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(wishlitProduct)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    toast.success('porduct added to wishlist')
+                })
 
+
+        }
+
+        else {
+            toast.success('Please log in first')
+        }
+    }
+
+    const handleBooking = (product) => {
+
+        if (user?.uid) {
+
+            setBooking(product)
+
+        }
+        else {
+            toast.success('Please log in first')
+        }
 
     }
     return (
@@ -67,7 +86,7 @@ const ProductCard = ({ product, setBooking }) => {
                         <label
                             className="btn btn-primary"
                             htmlFor="my-modal"
-                            onClick={() => setBooking(product)}> Book Now</label>
+                            onClick={() => handleBooking(product)}> Book Now</label>
                     </div>
                 </div>
             </div>

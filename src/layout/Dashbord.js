@@ -22,23 +22,23 @@ const Dashbord = () => {
 
     if (role === 'buyer') {
         menuItem = <>
-            <li><Link to='/dashbord/myOrder'>MyOrder</Link></li>
-            <li><Link to='/dashbord/myWishlist'>MyWishList </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/myOrder'>MyOrder</Link></li>
+            <li><Link className=' font-bold' to='/dashbord/myWishlist'>MyWishList </Link></li>
         </>
     }
     else if (role === 'seller') {
 
         menuItem = <>
-            <li><Link to='/dashbord/addProduct'>Add Product  </Link></li>
-            <li><Link to='/dashbord/myProduct'>My Product </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/addProduct'>Add Product  </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/myProduct'>My Product </Link></li>
         </>
     }
 
     else if (role === 'admin') {
         menuItem = <>
-            <li><Link to='/dashbord/myBuyer'>My Buyer  </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/myBuyer'>My Buyer  </Link></li>
 
-            <li><Link to='/dashbord/mySeller'>My Seller  </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/mySeller'>My Seller  </Link></li>
         </>
     }
 
