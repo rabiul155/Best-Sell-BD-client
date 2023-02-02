@@ -30,14 +30,14 @@ const Dashbord = () => {
     else if (role === 'seller') {
 
         menuItem = <>
-            <li><Link className=' font-bold' to='/dashbord/'>Add Product  </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/addProduct'>Add Product  </Link></li>
             <li><Link className=' font-bold' to='/dashbord/myProduct'>My Product </Link></li>
         </>
     }
 
     else if (role === 'admin') {
         menuItem = <>
-            <li><Link className=' font-bold' to='/dashbord/'>My Buyer  </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/myBuyer'>My Buyer  </Link></li>
 
             <li><Link className=' font-bold' to='/dashbord/mySeller'>My Seller  </Link></li>
         </>

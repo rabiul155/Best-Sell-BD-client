@@ -25,6 +25,23 @@ const Navbar = () => {
             })
     }
 
+    let dashbord = <></>
+
+    if (role === 'seller') {
+        dashbord =
+            <>
+                <li><Link to='/dashbord'>Dashbord</Link></li>
+            </>
+    }
+    if (role === 'admin') {
+        dashbord =
+            <>
+                <li><Link to='/dashbord'>Dashbord</Link></li>
+            </>
+    }
+
+
+
     const menuItem =
         <>
 
@@ -32,9 +49,8 @@ const Navbar = () => {
             <li><Link >Category</Link></li>
             <li><Link to='/cart'>Cart<HiOutlineShoppingCart></HiOutlineShoppingCart></Link></li>
             {
-                role !== 'buyer' &&
-                <li><Link to='/dashbord'>Dashbord</Link></li>
 
+                dashbord
 
             }
 
