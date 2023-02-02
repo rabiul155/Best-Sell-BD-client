@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { HiMenuAlt1 } from "react-icons/hi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import useRole from '../../hooks/useRole';
+import Loading from '../Loading/Loading';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+
+    const [role, finidigRole] = useRole(user?.email)
+    console.log(role);
+
 
     const handleLogOut = () => {
         logOut()
@@ -25,7 +31,14 @@ const Navbar = () => {
             <li><Link to='/'>Home</Link></li>
             <li><Link >Category</Link></li>
             <li><Link to='/cart'>Cart<HiOutlineShoppingCart></HiOutlineShoppingCart></Link></li>
-            <li><Link to='/dashbord'>Dashbord</Link></li>
+            {
+                role !== 'buyer' &&
+                <li><Link to='/dashbord'>Dashbord</Link></li>
+
+
+            }
+
+
             {/* <li><Link to='/blog'>Blog</Link></li> */}
 
 

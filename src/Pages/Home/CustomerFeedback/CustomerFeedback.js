@@ -80,7 +80,7 @@ const CustomerFeedback = () => {
                                 <span className="label-text">Your Experience</span>
                             </label>
                             <select name='experience' className="select select-bordered w-full ">
-                                <option selected>Good</option>
+                                <option defaultValue>Good</option>
                                 <option>Fair</option>
                                 <option>Excelent</option>
                             </select>
@@ -90,7 +90,7 @@ const CustomerFeedback = () => {
                                 <span className="label-text">Rate Us</span>
                             </label>
                             <select name='rate' className="select select-bordered w-full ">
-                                <option selected>5 star</option>
+                                <option defaultValue>5 star</option>
                                 <option>4 star</option>
                                 <option>3 star</option>
                                 <option>2 star</option>

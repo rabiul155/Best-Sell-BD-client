@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { FaCheckCircle } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const ProductCard = ({ product, setBooking }) => {
@@ -9,35 +10,38 @@ const ProductCard = ({ product, setBooking }) => {
 
     const { _id, about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
 
-    const handleWishlist = (_id) => {
-        if (user?.uid) {
-            const wishlitProduct = {
 
-                email: user?.email,
-                picture,
-                productName,
-                resalePrice
-            }
-            fetch('https://78-laptop-resalse-server.vercel.app/wishlist', {
-                method: "POST",
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(wishlitProduct)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    toast.success('porduct added to wishlist')
-                })
+    // const handleWishlist = (_id) => {
+    //     if (user?.uid) {
+    //         const wishlitProduct = {
+
+    //             email: user?.email,
+    //             picture,
+    //             productName,
+    //             resalePrice
+    //         }
+    //         fetch('https://78-laptop-resalse-server.vercel.app/wishlist', {
+    //             method: "POST",
+    //             headers: {
+    //                 'content-type': 'application/json'
+    //             },
+    //             body: JSON.stringify(wishlitProduct)
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 console.log(data)
+    //                 toast.success('porduct added to wishlist')
+    //             })
 
 
-        }
+    //     }
 
-        else {
-            toast.success('Please log in first')
-        }
-    }
+    //     else {
+    //         toast.success('Please log in first')
+    //     }
+    // }
+
+
 
     const handleBooking = (product) => {
 
@@ -62,13 +66,13 @@ const ProductCard = ({ product, setBooking }) => {
                         <p>Orgila Price : ${orginalPrice}</p>
                         <p>Resale Price : ${resalePrice}</p>
                     </div>
-                    <p>{about}</p>
-                    <div className=' flex justify-between'>
+
+                    {/* <div className=' flex justify-between'>
                         <p>Condition : {condition}</p>
                         <p>Use Time : {useTime}</p>
-                    </div>
+                    </div> */}
                     <div className=' flex justify-between'>
-                        <p className=' font-semibold'>
+                        <p className='font-semibold'>
                             Seller : {sellerName}
                             {
                                 verify &&
@@ -77,11 +81,13 @@ const ProductCard = ({ product, setBooking }) => {
                         </p>
                         <p>Location : {location}</p>
                     </div>
-                    <p>Phone : {phone}</p>
-                    <p>Date : {date}</p>
+                    <div className=' flex justify-between'>
+                        <p>Phone : {phone}</p>
+                        <p>Date : {date}</p>
+                    </div>
 
-                    <div className="card-actions justify-end">
-                        <button onClick={() => handleWishlist(_id)} className=' btn btn-secondary'>Add To Wishlist</button>
+                    <div className="card-actions justify-end pt-4">
+                        <Link to={`/productDetails/${_id}`}> <button className=' btn btn-secondary'>View Details</button></Link>
 
                         <label
                             className="btn btn-primary"

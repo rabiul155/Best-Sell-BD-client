@@ -13,6 +13,7 @@ import MyOrder from "../Pages/MyOrder/MyOrder";
 import MyProduct from "../Pages/MyProduct/MyProduct";
 import MySeller from "../Pages/MySeller/MySeller";
 import MyWishlist from "../Pages/MyWishlist/MyWishlist";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import SignUp from "../Pages/SignUp/SignUp";
 import DashbordRoute from "./DashbordRoute/DashbordRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
@@ -52,6 +53,13 @@ const router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart></Cart>
+            },
+            {
+
+                path: '/productDetails/:_id',
+                loader: ({ params }) => fetch(`https://78-laptop-resalse-server.vercel.app/productDetails/${params._id}`),
+                element: <ProductDetails></ProductDetails>
+
             }
 
 
@@ -62,14 +70,14 @@ const router = createBrowserRouter([
         errorElement: <ErroePage></ErroePage>,
         element: <Dashbord></Dashbord>,
         children: [
-            {
-                path: '/dashbord/myOrder',
-                element: <DashbordRoute><MyOrder></MyOrder></DashbordRoute>
-            },
-            {
-                path: '/dashbord/myWishlist',
-                element: <DashbordRoute><MyWishlist></MyWishlist></DashbordRoute>
-            },
+            // {
+            //     path: '/dashbord/myOrder',
+            //     element: <DashbordRoute><MyOrder></MyOrder></DashbordRoute>
+            // },
+            // {
+            //     path: '/dashbord/myWishlist',
+            //     element: <DashbordRoute><MyWishlist></MyWishlist></DashbordRoute>
+            // },
             {
                 path: '/dashbord/addProduct',
                 element: <DashbordRoute><AddProduct></AddProduct></DashbordRoute>
