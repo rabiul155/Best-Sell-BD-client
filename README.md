@@ -2,6 +2,7 @@
 
 
 # Live Link : https://laptop-resale.web.app/
+# Server Side : https://78-laptop-resalse-server.vercel.app
 
 # Feature 
 
