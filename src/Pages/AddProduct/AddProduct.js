@@ -131,7 +131,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Picture</span>
                         </label>
-                        <input  {...register('picture')} required type="file" placeholder="Type here" className="  w-full" />
+                        <input className="file-input file-input-bordered w-full"  {...register('picture')} required type="file" placeholder="Type here" />
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
@@ -203,7 +203,7 @@ const AddProduct = () => {
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
-                    <textarea  {...register('about')} required className="textarea textarea-bordered w-full" placeholder="Bio"></textarea>
+                    <textarea  {...register('about')} required className="textarea textarea-bordered w-full" placeholder="Product Details"></textarea>
                 </div>
 
                 <div className=' flex justify-center m-5'>

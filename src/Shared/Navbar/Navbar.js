@@ -27,13 +27,7 @@ const Navbar = () => {
 
     let dashbord = <></>
 
-    if (role === 'seller') {
-        dashbord =
-            <>
-                <li><Link to='/dashbord'>Dashbord</Link></li>
-            </>
-    }
-    if (role === 'admin') {
+    if (user?.email && (role === 'seller' || role === 'admin')) {
         dashbord =
             <>
                 <li><Link to='/dashbord'>Dashbord</Link></li>
