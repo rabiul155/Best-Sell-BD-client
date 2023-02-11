@@ -7,7 +7,9 @@ import app from '../../../firebase/firebase.cofig';
 import FeedbackCard from './FeedbackCard';
 
 const CustomerFeedback = () => {
+
     const { user } = useContext(AuthContext)
+
 
     const { data: feedback = [], refetch } = useQuery({
         queryKey: ['feedback'],
@@ -20,36 +22,48 @@ const CustomerFeedback = () => {
     })
 
     const handleSubmit = event => {
+
         event.preventDefault()
-        const form = event.target;
-        const message = form.feedback.value;
-        const experience = form.experience.value;
-        const rate = form.rate.value;
 
-        const feedback = {
-            photo: user?.photoURL,
-            name: user?.displayName,
-            message,
-            experience,
-            rate
-        }
-        console.log(feedback)
+        if (user?.uid) {
+            const form = event.target;
+            const message = form.feedback.value;
+            const experience = form.experience.value;
+            const rate = form.rate.value;
+            const feedback = {
+                photo: user?.photoURL,
+                name: user?.displayName,
+                message,
+                experience,
+                rate
+            }
+            console.log(feedback)
 
-        fetch('https://78-laptop-resalse-server.vercel.app/feedback', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(feedback)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                toast.success('feedback added')
-                form.reset();
-                refetch();
+            fetch('https://78-laptop-resalse-server.vercel.app/feedback', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(feedback)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    toast.success('feedback added')
+                    form.reset();
+                    refetch();
+                })
+        }
+
+
+        else {
+            toast.success('Please log in to add your feedback')
+        }
+
+
     }
+
+
     return (
         <div>
             <h2 className=' text-secondary text-4xl text-center mt-6 font-bold'>Our Customer Feedback</h2>

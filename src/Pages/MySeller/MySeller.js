@@ -52,6 +52,7 @@ const MySeller = () => {
     }
 
     return (
+
         <div>
             <div className="overflow-x-auto">
                 <table className="table w-full">

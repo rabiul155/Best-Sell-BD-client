@@ -86,7 +86,7 @@ const CartProduct = ({ product, refetch }) => {
         <div>
 
             <div className=' m-4'>
-                <div className=" bg-base-100 shadow-xl p-2 flex justify-between ">
+                <div className=" bg-base-100 shadow-xl p-2 lg:flex justify-between ">
                     <div className=' flex items-center'>
                         <div className="avatar">
                             <div className="w-24 h-24 rounded-xl hover:shadow-2xl shadow-2xl">
@@ -100,7 +100,7 @@ const CartProduct = ({ product, refetch }) => {
 
                         </div>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center mt-4 lg:mt-0">
 
 
                         <button onClick={() => handleDecrease()} className=' px-3 text-3xl bg-base-200  border rounded-sm border-gray-300'>-</button>

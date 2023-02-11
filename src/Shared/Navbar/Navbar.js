@@ -40,14 +40,20 @@ const Navbar = () => {
         <>
 
             <li><Link to='/'>Home</Link></li>
-            <li><Link >Category</Link></li>
+            <li className="dropdown dropdown-hover">
+                <div tabIndex={0} className=" font-bold "><Link>Categories</Link></div>
+                <ul tabIndex={0} className="dropdown-content menu p-2 text-black shadow bg-base-100 rounded-box w-52">
+                    <li><Link className='w-full' to='/category/laptop'>Laptop</Link></li>
+                    <li><Link className='w-full' to='/category/monitor'>Monitor</Link></li>
+                    <li><Link className='w-full' to='/category/phone'>Phone</Link></li>
+                </ul>
+            </li>
             <li><Link to='/cart'>Cart<HiOutlineShoppingCart></HiOutlineShoppingCart></Link></li>
             {
 
                 dashbord
 
             }
-
 
             {/* <li><Link to='/blog'>Blog</Link></li> */}
 
@@ -69,7 +75,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case font-bold text-xl">Best Sell BD</Link>
+                <Link className="btn px-0 lg:px-4 btn-ghost normal-case font-bold text-white text-xl">Best Sell BD</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -86,8 +92,8 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <Link to='/login' className="btn mx-2">LogIn</Link>
-                            <Link to='/signup' className="btn mx-2">SignUp</Link>
+                            <Link to='/login' className="btn px-0  lg:mx-2">LogIn</Link>
+                            <Link to='/signup' className="btn lg:mx-2">SignUp</Link>
 
                         </>
                 }

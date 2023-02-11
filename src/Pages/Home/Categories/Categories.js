@@ -1,26 +1,29 @@
-
+import React from 'react';
 import hp from '../../../assets/hp.jpg'
 import dell from '../../../assets/dell.jpg'
 import asus from '../../../assets/asus.webp'
 import { Link } from 'react-router-dom';
+import laptop from '../../../assets/laptop.png'
+import monitor from '../../../assets/monitor.png'
+import phone from '../../../assets/phone.png'
 
 const Categories = () => {
     const categories = [
         {
             id: 1,
 
-            brand: 'hp',
-            photo: hp
+            category: 'laptop',
+            photo: laptop
         },
         {
             id: 2,
-            brand: 'dell',
-            photo: dell
+            category: 'monitor',
+            photo: monitor
         },
         {
             id: 3,
-            brand: 'asus',
-            photo: asus
+            category: 'phone',
+            photo: phone
         }
     ]
 
@@ -37,7 +40,7 @@ const Categories = () => {
                             <div className="card-actions w-full mt-4">
 
                                 <Link className="btn shadow-lg hover:shadow-slate-400 btn-primary w-full"
-                                    to={`/category/${category.brand}`}>Available Product</Link>
+                                    to={`/category/${category.category}`}>Available {category.category}</Link>
                             </div>
                         </div>)
                 }

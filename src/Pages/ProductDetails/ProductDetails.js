@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const { _id, about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
     return (
 
-        <div className=' m-4'>
+        <div className=' mt-4'>
 
             <div className='sm:w-1/2 mx-auto'>
                 <img src={picture} alt='' className="rounded-lg w-full shadow-2xl py-8" />
@@ -71,6 +71,14 @@ const ProductDetails = () => {
 
                     </tbody>
                 </table>
+            </div>
+            <div className="form-control w-1/2 my-4 mx-auto">
+                <div className="input-group w-full">
+                    <input type="text" placeholder="Add comment" className="input input-bordered w-full" />
+                    <button className="btn ">
+                        Comment
+                    </button>
+                </div>
             </div>
         </div>
     );

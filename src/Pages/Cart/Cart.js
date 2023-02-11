@@ -56,9 +56,9 @@ const Cart = () => {
 
 
     return (
-        <div className=' grid grid-cols-4 mt-6'>
+        <div className=' grid grid-cols-1 lg:grid-cols-4 mt-6'>
 
-            <div className='col-span-3'>
+            <div className='lg:col-span-3'>
 
 
                 {
@@ -82,8 +82,8 @@ const Cart = () => {
 
             </div>
 
-            <div className="card w-72 ">
-                <div className="card w-72 bg-base-200  shadow-xl">
+            <div className="card w-full lg:w-72 ">
+                <div className="card w-full lg:w-72 bg-base-200  shadow-xl">
                     <div className="card-body">
                         <h2 className=" text-2xl font-bold text-center pb-4">Checkout</h2>
                         <p className=' font-bold py-1 text-xl'>Product Cost : ${productCost}</p>
@@ -109,9 +109,9 @@ const Cart = () => {
                             via following payment method</h3>
                         <h3 className="text-lg font-bold">Total Cost : ${totalCost}</h3>
                         <div className=' grid grid-cols-3 gap-4 my-8'>
-                            <img src={img1} alt="" className=' shadow-2xl rounded-lg hover:shadow-2xl' />
-                            <img src={img2} alt="" className=' shadow-2xl  rounded-lg hover:shadow-2xl' />
-                            <img src={img3} alt="" className=' shadow-2xl  rounded-lg hover:shadow-2xl' />
+                            <img src={img1} alt="" className=' lg:w-full shadow-2xl rounded-lg hover:shadow-2xl' />
+                            <img src={img2} alt="" className=' lg:w-full shadow-2xl  rounded-lg hover:shadow-2xl' />
+                            <img src={img3} alt="" className='lg:w-full shadow-2xl  rounded-lg hover:shadow-2xl' />
                         </div>
                     </div>
                 </div>

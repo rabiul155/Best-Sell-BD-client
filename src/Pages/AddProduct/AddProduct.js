@@ -106,14 +106,14 @@ const AddProduct = () => {
                 <div className=' sm:grid grid-cols-2 gap-5 m-5' >
                     <div className="form-control w-full ">
                         <label className="label">
-                            <span className="label-text ">Brand Name</span>
+                            <span className="label-text ">Product Category</span>
                         </label>
                         <select
                             {...register('brand')}
                             className="select select-bordered w-full ">
-                            <option selected>hp</option>
-                            <option>dell</option>
-                            <option>asus</option>
+                            <option selected>laptop</option>
+                            <option>monitor</option>
+                            <option>phone</option>
                         </select>
                     </div>
                     <div className="form-control w-full ">
