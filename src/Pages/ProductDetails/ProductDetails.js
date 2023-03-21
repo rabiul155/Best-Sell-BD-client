@@ -1,17 +1,65 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaCheckCircle } from "react-icons/fa";
+import { AuthContext } from '../../context/AuthProvider';
+import { toast } from 'react-hot-toast';
+import { useQuery } from '@tanstack/react-query';
+import UserReview from './UserReview';
 
 const ProductDetails = () => {
 
     const product = useLoaderData();
+    const { user } = useContext(AuthContext);
     console.log(product);
     const { _id, about, condition, date, location, orginalPrice, phone, picture, productName, resalePrice, sellerName, useTime, verify } = product;
+
+
+    const { data: userReviewData = [], refetch } = useQuery({
+        queryKey: ['userReview', _id],
+        queryFn: () => fetch(`https://78-laptop-resalse-server.vercel.app/review/${_id}`)
+            .then(res => res.json())
+    })
+
+
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        if (user?.uid) {
+            const rev = event.target.review.value;
+            const reviewPacket = {
+                productId: _id,
+                name: user?.displayName,
+                photo: user?.photoURL,
+                date: new Date().toLocaleDateString(),
+                review: rev
+            }
+            console.log(reviewPacket)
+            fetch(`https://78-laptop-resalse-server.vercel.app/review`, {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(reviewPacket)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    event.target.reset();
+                    refetch();
+                });
+        }
+        else {
+            toast.success('Please login first')
+        }
+
+    }
+
+
     return (
 
         <div className=' mt-4'>
 
-            <div className='sm:w-1/2 mx-auto'>
+            <div className='lg:w-1/2 mx-auto'>
                 <img src={picture} alt='' className="rounded-lg w-full shadow-2xl py-8" />
                 <h2 className=' text-xl font-bold pt-8 px-2'>Seller Name : {sellerName}
                     {
@@ -72,13 +120,21 @@ const ProductDetails = () => {
                     </tbody>
                 </table>
             </div>
-            <div className="form-control w-1/2 my-4 mx-auto">
-                <div className="input-group w-full">
-                    <input type="text" placeholder="Add comment" className="input input-bordered w-full" />
-                    <button className="btn ">
+            <div className="form-control lg:w-3/4 my-4 mx-auto">
+                <h2 className=' text-2xl font-bold mb-4'>Our customer review</h2>
+                {
+
+                    userReviewData?.map(review => <UserReview
+                        key={review._id}
+                        reviewData={review}
+                    ></UserReview>)
+                }
+                <form onSubmit={handleSubmit} className="input-group w-full">
+                    <input name='review' type="text" placeholder="Add comment" className="input input-bordered w-full" />
+                    <button type='submit' className="btn ">
                         Comment
                     </button>
-                </div>
+                </form>
             </div>
         </div>
     );

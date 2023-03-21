@@ -60,7 +60,7 @@ const MyBuyer = () => {
                                     <th >{index + 1}</th>
                                     <td>
                                         <div className="avatar">
-                                            <div className="w-12 md:w-24 rounded-full">
+                                            <div className="w-12 md:w-16 rounded-full">
                                                 <img src={buyer?.picture} alt='none' />
                                             </div>
                                         </div>

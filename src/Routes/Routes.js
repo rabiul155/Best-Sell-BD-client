@@ -15,6 +15,8 @@ import MySeller from "../Pages/MySeller/MySeller";
 import MyWishlist from "../Pages/MyWishlist/MyWishlist";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import SignUp from "../Pages/SignUp/SignUp";
+import Statistics from "../Pages/Statistics/Statistics";
+import Summary from "../Pages/Summary/Summary";
 import DashbordRoute from "./DashbordRoute/DashbordRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
@@ -88,6 +90,11 @@ const router = createBrowserRouter([
                 element: <DashbordRoute><MyProduct></MyProduct></DashbordRoute>
             },
             {
+                path: '/dashbord/summary',
+                element: <DashbordRoute><Summary></Summary></DashbordRoute>
+
+            },
+            {
                 path: '/dashbord/myBuyer',
                 element: <DashbordRoute><MyBuyer></MyBuyer></DashbordRoute>
             },
@@ -95,6 +102,10 @@ const router = createBrowserRouter([
                 path: '/dashbord/mySeller',
                 element: <DashbordRoute><MySeller></MySeller></DashbordRoute>
             },
+            {
+                path: '/dashbord/statistics',
+                element: <DashbordRoute><Statistics></Statistics></DashbordRoute>
+            }
 
         ]
     }

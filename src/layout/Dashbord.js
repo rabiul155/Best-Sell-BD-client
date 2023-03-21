@@ -32,14 +32,15 @@ const Dashbord = () => {
         menuItem = <>
             <li><Link className=' font-bold' to='/dashbord/addProduct'>Add Product  </Link></li>
             <li><Link className=' font-bold' to='/dashbord/myProduct'>My Product </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/summary'>Summary</Link></li>
         </>
     }
 
     else if (role === 'admin') {
         menuItem = <>
-            <li><Link className=' font-bold' to='/dashbord/myBuyer'>My Buyer  </Link></li>
-
-            <li><Link className=' font-bold' to='/dashbord/mySeller'>My Seller  </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/myBuyer'>My Buyer</Link></li>
+            <li><Link className=' font-bold' to='/dashbord/mySeller'>My Seller </Link></li>
+            <li><Link className=' font-bold' to='/dashbord/statistics'>Statistics </Link></li>
         </>
     }
 
@@ -57,7 +58,7 @@ const Dashbord = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="dashbord-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 text-base-content">
+                    <ul className="menu p-4 w-64 text-base-content">
 
                         {
                             menuItem
