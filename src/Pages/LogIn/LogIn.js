@@ -88,9 +88,9 @@ const LogIn = () => {
 
     return (
 
-        <div>
-            <div className=' h-[800px] flex justify-center'>
-                <div className=' w-96 p-7'>
+        <div className='relative'>
+            <div className='flex justify-center'>
+                <div className='w-96 p-7'>
                     <h2 className=' text-3xl font-bold text-primary text-center'>LogIn</h2>
                     <form onSubmit={handleSubmit(handleLogIn)}>
 
@@ -147,7 +147,7 @@ const LogIn = () => {
                     <button onClick={handleGoogle} className=' btn btn-outline w-full uppercase'>Continue with google</button>
                 </div>
             </div>
-            <div className=' lg:absolute top-20 right-6'>
+            <div className='lg:absolute top-10 right-6 mx-10 '>
                 <p>Credential Info</p>
                 <p>Buyer : </p>
                 <p>Email : buyer@gmail.com</p>

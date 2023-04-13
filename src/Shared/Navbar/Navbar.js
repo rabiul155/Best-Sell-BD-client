@@ -92,8 +92,8 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <Link to='/login' className="btn px-0  lg:mx-2">LogIn</Link>
-                            <Link to='/signup' className="btn lg:mx-2">SignUp</Link>
+                            <Link to='/login' className="btn px-2  lg:mx-1">LogIn</Link>
+                            <Link to='/signup' className="btn px-2 lg:mx-1">SignUp</Link>
 
                         </>
                 }
