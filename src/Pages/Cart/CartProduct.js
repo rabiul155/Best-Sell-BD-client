@@ -103,13 +103,16 @@ const CartProduct = ({ product, refetch }) => {
                     <div className="flex items-center mt-4 lg:mt-0">
 
 
-                        <button onClick={() => handleDecrease()} className=' px-3 text-3xl bg-base-200  border rounded-sm border-gray-300'>-</button>
-                        <p className='text-2xl bg-base-200   border rounded-sm px-3 '>{count}</p>
-                        <button onClick={() => handleIncrese()} className=' text-3xl bg-base-200 px-2 border rounded-sm border-gray-300'>+</button>
-
+                        <table className='border bg-base-200 border-collapse'>
+                            <tr className=''>
+                                <td className='px-[11px] text-xl pb-1 font-bold border-2'><button onClick={() => handleDecrease()} >-</button></td>
+                                <td className='px-3 text-xl font-semibold border-2'>{count}</td>
+                                <td className='px-2 text-xl pb-1 font-bold border-2'><button onClick={() => handleIncrese()} >+</button></td>
+                            </tr>
+                        </table>
 
                         <h2 className="card-title mx-4">${totalPrice}</h2>
-                        <button onClick={() => handleDelete()} className=""><FaTrashAlt className=' text-amber-600 text-4xl mx-6'></FaTrashAlt></button>
+                        <button onClick={() => handleDelete()} className=""><FaTrashAlt className=' text-amber-600 text-3xl mx-6'></FaTrashAlt></button>
 
                     </div>
                 </div>
