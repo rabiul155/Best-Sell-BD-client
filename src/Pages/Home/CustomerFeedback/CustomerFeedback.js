@@ -1,10 +1,17 @@
-import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider';
-import app from '../../../firebase/firebase.cofig';
-import FeedbackCard from './FeedbackCard';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FaStarHalfAlt } from "react-icons/fa";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+
+// import required modules
+import { Autoplay, Pagination } from "swiper";
 
 const CustomerFeedback = () => {
 
@@ -68,19 +75,69 @@ const CustomerFeedback = () => {
         <div>
             <h2 className=' text-secondary text-4xl text-center mt-6 font-bold'>Our Customer Feedback</h2>
 
-            {/* show feedback */}
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
+            <div className=' m-6'>
+                <Swiper
+                    freeMode={true}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        992: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        }
+                    }}
+                    speed={1000}
+                    autoplay={{
+                        delay: 1500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay]}
+                    className="mySwiper"
+                >
 
-                {
-                    feedback?.map(feed => <FeedbackCard
-                        key={feed._id}
-                        feed={feed}
-                    ></FeedbackCard>)
-                }
+                    {
+                        feedback?.map(feed =>
+                            <SwiperSlide >
+                                <div className=" card-compact rounded-tl-[40px]  rounded-br-[40px] p-4  w-full bg-base-200 shadow-xl">
+                                    <div className=' flex justify-between '>
+                                        <div className="flex justify-start items-center">
+                                            <div className="mr-4">
+                                                <img className="w-16 rounded-full" src={feed.photo} alt='none' />
+                                            </div>
+                                            <div>
+                                                <h2 className="card-title">{feed.name}</h2>
+                                                <p>Experience : {feed.experience}</p>
+                                            </div>
+                                        </div>
+                                        <div className="font-bold flex gap-1">
 
-
-
+                                            <FaStarHalfAlt className=' text-yellow-400' size={22}></FaStarHalfAlt>
+                                            <FaStarHalfAlt className=' text-yellow-400' size={22}></FaStarHalfAlt>
+                                            <FaStarHalfAlt className=' text-yellow-400' size={22}></FaStarHalfAlt>
+                                            <FaStarHalfAlt className=' text-yellow-400' size={22}></FaStarHalfAlt>
+                                        </div>
+                                    </div>
+                                    <div className="card-body">
+                                        <p>{feed.message}</p>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        )
+                    }
+                </Swiper>
             </div>
+
+
             {/* take user feedback */}
             <div className='mx-6'>
                 <form onSubmit={handleSubmit}>
@@ -104,11 +161,11 @@ const CustomerFeedback = () => {
                                 <span className="label-text">Rate Us</span>
                             </label>
                             <select name='rate' className="select select-bordered w-full ">
-                                <option defaultValue>5 star</option>
-                                <option>4 star</option>
-                                <option>3 star</option>
-                                <option>2 star</option>
-                                <option>1 star</option>
+                                <option defaultValue>5 </option>
+                                <option>4 </option>
+                                <option>3 </option>
+                                <option>2 </option>
+                                <option>1 </option>
 
                             </select>
                         </div>
