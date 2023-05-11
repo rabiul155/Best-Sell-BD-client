@@ -104,11 +104,13 @@ const CartProduct = ({ product, refetch }) => {
 
 
                         <table className='border bg-base-200 border-collapse'>
-                            <tr className=''>
-                                <td className='px-[11px] text-xl pb-1 font-bold border-2'><button onClick={() => handleDecrease()} >-</button></td>
-                                <td className='px-3 text-xl font-semibold border-2'>{count}</td>
-                                <td className='px-2 text-xl pb-1 font-bold border-2'><button onClick={() => handleIncrese()} >+</button></td>
-                            </tr>
+                            <tbody>
+                                <tr className=''>
+                                    <td className='px-[11px] text-xl pb-1 font-bold border-2'><button onClick={() => handleDecrease()} >-</button></td>
+                                    <td className='px-3 text-xl font-semibold border-2'>{count}</td>
+                                    <td className='px-2 text-xl pb-1 font-bold border-2'><button onClick={() => handleIncrese()} >+</button></td>
+                                </tr>
+                            </tbody>
                         </table>
 
                         <h2 className="card-title mx-4">${totalPrice}</h2>

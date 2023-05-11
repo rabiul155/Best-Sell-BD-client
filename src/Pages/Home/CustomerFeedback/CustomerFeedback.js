@@ -98,17 +98,17 @@ const CustomerFeedback = () => {
                         disableOnInteraction: false,
                     }}
                     pagination={{
-                        clickable: true,
+                        dynamicBullets: true,
                     }}
                     navigation={true}
-                    modules={[Autoplay]}
+                    modules={[Pagination, Autoplay]}
                     className="mySwiper"
                 >
 
                     {
                         feedback?.map(feed =>
-                            <SwiperSlide >
-                                <div className=" card-compact rounded-tl-[40px]  rounded-br-[40px] p-4  w-full bg-base-200 shadow-xl">
+                            <SwiperSlide key={feed._id}>
+                                <div className="my-10 min-h-[200px] card-compact rounded-tl-[40px]  rounded-br-[40px] p-4  w-full bg-base-200 shadow-xl">
                                     <div className=' flex justify-between '>
                                         <div className="flex justify-start items-center">
                                             <div className="mr-4">

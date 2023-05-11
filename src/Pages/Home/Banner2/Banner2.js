@@ -66,7 +66,7 @@ const Banner2 = () => {
 
                         </div>
                         <div>
-                            <img src={sl2} alt="" srcset="" />
+                            <img src={sl2} alt="" srcSet="" />
                         </div>
                     </div>
                 </SwiperSlide>

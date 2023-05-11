@@ -129,7 +129,7 @@ const LogIn = () => {
 
 
                                 />
-                                <label className="form-check-label inline-block text-gray-800" for="exampleCheck2"
+                                <label className="form-check-label inline-block text-gray-800" htmlFor="exampleCheck2"
                                 >Remember me</label>
 
                             </div>

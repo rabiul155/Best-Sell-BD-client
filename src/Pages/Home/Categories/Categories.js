@@ -1,7 +1,4 @@
 import React from 'react';
-import hp from '../../../assets/hp.jpg'
-import dell from '../../../assets/dell.jpg'
-import asus from '../../../assets/asus.webp'
 import { Link } from 'react-router-dom';
 import laptop from '../../../assets/laptop.png'
 import monitor from '../../../assets/monitor.png'

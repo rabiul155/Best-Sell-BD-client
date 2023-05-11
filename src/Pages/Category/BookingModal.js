@@ -63,11 +63,10 @@ const BookingModal = ({ booking, setBooking }) => {
                     <div className="modal-box relative">
                         <label onClick={() => setBooking(null)} htmlFor="my-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <h3 className="text-lg font-bold">Booking This Item</h3>
-                        <form onSubmit={handleSubmit} className=' grid grid-cols-1 gap-3 mt-10'>
+                        <form onSubmit={handleSubmit} className=' grid grid-cols-1 gap-3 mt-4'>
                             <span className="label-text">Buyer Name : </span>
                             <input readOnly defaultValue={user?.displayName} type="text" placeholder="Type here" className="input input-bordered w-full" />
-                            <span className="label-text">Buyer Email : </span>
-                            <input readOnly defaultValue={user?.email} type="text" placeholder="Type here" className="input input-bordered w-full" />
+
                             <span className="label-text">Product Name : </span>
                             <input readOnly defaultValue={productName} type="text" placeholder="Type here" className="input input-bordered w-full" />
                             <span className="label-text">Product Price : </span>

@@ -5,12 +5,12 @@ import { AuthContext } from '../../context/AuthProvider';
 import { HiMenuAlt1 } from "react-icons/hi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import useRole from '../../hooks/useRole';
-import Loading from '../Loading/Loading';
+
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    const [role, finidigRole] = useRole(user?.email)
+    const [role] = useRole(user?.email)
     console.log(role);
 
 
@@ -25,7 +25,10 @@ const Navbar = () => {
             })
     }
 
-    let dashbord = <></>
+    let dashbord =
+        <>
+
+        </>
 
     if (user?.email && (role === 'seller' || role === 'admin')) {
         dashbord =
@@ -55,15 +58,10 @@ const Navbar = () => {
 
             }
 
-            {/* <li><Link to='/blog'>Blog</Link></li> */}
-
-
-
-
         </>
 
     return (
-        <div className="navbar bg-neutral lg:text-neutral-content font-bold">
+        <div className="navbar  z-50  bg-neutral lg:text-neutral-content font-bold">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -45,7 +45,6 @@ const Cart = () => {
         }
         shipping = myOrder.length * 5;
         vat = Math.round(productCost * .05);
-
         totalCost = productCost + shipping + vat;
 
 
@@ -60,18 +59,16 @@ const Cart = () => {
 
             <div className='lg:col-span-3'>
 
-
                 {
-                    myOrder.length === 0 &&
+                    myOrder?.length === 0 &&
 
                     <>
                         <h2 className=' text-4xl font-bold text-center text-purple-700 '>You haven't Order Yet. Please, Order First </h2>
                     </>
 
-
                 }
                 {
-                    myOrder.map(product => <CartProduct
+                    myOrder?.map(product => <CartProduct
                         key={product._id}
                         product={product}
                         refetch={refetch}

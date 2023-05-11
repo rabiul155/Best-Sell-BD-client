@@ -12,7 +12,7 @@ const Banner = () => {
                         <h1 className=" font-bold leading-none text-4xl md:text-5xl lg:text-6xl">Used Item
                             <span className="text-secondary"> For Buy</span>  and Sale
                         </h1>
-                        <p className="mt-6 mb-8 text-lg sm:mb-12">Sale your old produt and buy new product
+                        <p className="mt-6 mb-8 text-lg sm:mb-12">Sell your old produt and buy new product
 
                         </p>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
