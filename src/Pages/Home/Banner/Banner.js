@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import banner from '../../../assets/banner.png'
+import banner2 from '../../../assets/banner-mockup.png'
 
 const Banner = () => {
     return (
         <div >
-            <section className="text-gray-900">
+            <section className="text-gray-900 bg-lime-50">
                 <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:flex-row lg:justify-between">
                     <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                         <h1 className=" font-bold leading-none text-4xl md:text-5xl lg:text-6xl">Used Item

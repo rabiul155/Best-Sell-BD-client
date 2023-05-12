@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthProvider';
 import { HiMenuAlt1 } from "react-icons/hi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import useRole from '../../hooks/useRole';
+import { FaUser } from 'react-icons/fa';
 
 
 const Navbar = () => {
@@ -87,6 +88,12 @@ const Navbar = () => {
                     user?.uid ?
                         <>
                             <Link onClick={handleLogOut} className="btn mx-2">LogOut</Link>
+                            {
+                                user?.photoURL ? <img className='rounded-full w-8 h-8 mr-5' src={user.photoURL} alt="" />
+                                    :
+                                    <div> <FaUser className=' rounded-full w-7 h-7 mr-5'></FaUser></div>
+
+                            }
                         </>
                         :
                         <>
