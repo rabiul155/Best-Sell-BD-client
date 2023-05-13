@@ -6,6 +6,7 @@ import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
 import Services from '../Services/Services';
 import Banner2 from '../Banner2/Banner2';
 import FlashSale from '../FlashSale/FlashSale';
+import TopSell from '../TopSell/TopSell';
 
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner2></Banner2>
             <Categories></Categories>
             <Advertise></Advertise>
+            <TopSell></TopSell>
             <Services></Services>
             <FlashSale></FlashSale>
             <CustomerFeedback></CustomerFeedback>

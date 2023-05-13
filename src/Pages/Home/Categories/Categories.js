@@ -27,12 +27,13 @@ const Categories = () => {
 
 
     return (
-        <div className=' mt-6'>
-            <h2 className=' text-4xl font-bold text-center text-secondary'>All Categories</h2>
-            <div className=' m-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='m-4 lg:m-10'>
+            <h2 className='mb-10 text-4xl font-bold  '>All Categories</h2>
+            <hr className=' ' />
+            <div className='my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     categories.map(category =>
-                        <div key={category.id} className=" w-96   bg-base-100 ">
+                        <div key={category.id} className=" w-[350px] mx-auto bg-base-100 ">
                             <figure><img className='bg-lime-50 rounded-lg' src={category.photo} alt="Shoes" /></figure>
                             <div className="card-actions w-full mt-4">
 

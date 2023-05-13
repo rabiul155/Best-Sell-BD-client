@@ -72,10 +72,11 @@ const CustomerFeedback = () => {
 
 
     return (
-        <div>
-            <h2 className=' text-secondary text-4xl text-center mt-6 font-bold'>Our Customer Feedback</h2>
+        <div className='m-4 lg:m-10'>
+            <h2 className=' text-4xl  mb-10 font-bold'>Our Customer Feedback</h2>
+            <hr />
 
-            <div className=' m-6'>
+            <div className='my-10'>
                 <Swiper
                     freeMode={true}
                     breakpoints={{
@@ -139,7 +140,8 @@ const CustomerFeedback = () => {
 
 
             {/* take user feedback */}
-            <div className='mx-6'>
+
+            <div className=''>
                 <form onSubmit={handleSubmit}>
                     <label className="label">
                         <span className="label-text">Add your user Experience</span>

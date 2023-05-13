@@ -27,7 +27,7 @@ const ProductCard = ({ product, setBooking }) => {
 
         <div >
             <div className="card card-compact mx-auto w-80 lg:w-[360px] bg-base-100 hover:shadow-slate-400 shadow-xl my-4">
-                <figure><img className=' w-80 lg:w-[360px] lg:h-[300px]' src={picture} alt="Shoes" /></figure>
+                <figure><img className='hover:scale-105 overflow-hidden duration-300 w-80 lg:w-[360px] lg:h-[300px]' src={picture} alt="Shoes" /></figure>
                 <div className="card-body ">
                     <h2 className="card-title">{productName}</h2>
                     <div className=' flex justify-between font-bold'>
@@ -52,10 +52,10 @@ const ProductCard = ({ product, setBooking }) => {
                     </div>
 
                     <div className="card-actions justify-end pt-4">
-                        <Link to={`/productDetails/${_id}`}> <button className=' btn btn-secondary'>View Details</button></Link>
+                        <Link to={`/productDetails/${_id}`}> <button className=' btn btn-secondary '>View Details</button></Link>
 
                         <label
-                            className="btn btn-primary py-0"
+                            className="btn btn-primary h-8"
                             htmlFor="my-modal"
                             onClick={() => handleBooking(product)}> Book Now</label>
                     </div>

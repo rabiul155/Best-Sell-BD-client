@@ -7,9 +7,10 @@ import waren from '../../../assets/4.webp'
 
 const Services = () => {
     return (
-        <div>
-            <h2 className=' text-center text-4xl font-bold text-secondary p-6'>Our Popular Services </h2>
-            <div className=' grid grid-cols-1 md:grid-cols-3 gap-5 justify-center'>
+        <div className=' m-4 lg:m-10'>
+            <h2 className='mb-10  text-4xl font-bold  '>Our Popular Services </h2>
+            <hr />
+            <div className='my-10 grid grid-cols-1 md:grid-cols-3 gap-5 justify-center'>
                 <div className=' flex justify-center '>
                     <div className="card card-compact hover:scale-105 duration-300  w-64 bg-base-100 shadow-xl hover:shadow-slate-400 ">
                         <figure><img src={delivery} alt="Shoes" className='bg-base-300' /></figure>
