@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import banner from '../../../assets/banner.png'
 import banner2 from '../../../assets/banner-mockup.png'
+import Typewriter from 'typewriter-effect';
 
 const Banner = () => {
     return (
@@ -12,9 +13,18 @@ const Banner = () => {
                         <h1 className=" font-bold leading-none text-4xl md:text-5xl lg:text-6xl">Used Item
                             <span className="text-secondary"> For Buy</span>  and Sale
                         </h1>
-                        <p className="mt-6 mb-8 text-lg sm:mb-12">Sell your old produt and buy new product
+                        <div className="mt-6 h-[50px] mb-8 text-3xl font-bold sm:mb-12 text-secondary">
+                            <Typewriter
 
-                        </p>
+                                options={{
+                                    strings: ['Sell your old product and buy new product!!!', 'Upgrade Your Tech, Simplify Your Life!!!'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 75,
+                                }}
+                            />
+                        </div>
+
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                             <Link rel="noopener noreferrer" className="px-7 py-[10px] text-lg font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Add Product</Link>
                             <Link rel="noopener noreferrer" className="px-7 py-[10px] text-lg font-semibold border rounded dark:border-gray-100 dark:bg-amber-500">Buy Product</Link>

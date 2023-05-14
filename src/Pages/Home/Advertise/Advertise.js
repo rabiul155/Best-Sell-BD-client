@@ -32,7 +32,7 @@ const Advertise = () => {
                         <div className=' m-4 lg:m-10'>
                             <h2 className='mb-10 text-4xl font-bold'>Our Popular Product</h2>
                             <hr />
-                            <div className='my-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+                            <div className='my-10 grid md:grid-cols-2  gap-6 '>
                                 {
                                     advertise?.map(product => <ProductCard
                                         key={product._id}

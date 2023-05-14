@@ -1,0 +1,52 @@
+.card-section {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s;
+
+}
+
+.button-section {
+    position: absolute;
+    bottom: -50px;
+    transition: .3s;
+}
+
+.card-section:hover .button-section {
+    position: absolute;
+    bottom: 10px;
+
+}
+
+
+
+
+
+.btn-1,
+.btn-2 {
+    padding: 6px 14px 8px 14px;
+    margin: 0px 2px 0px 2px;
+    font-weight: 600;
+    color: whitesmoke;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+
+.btn-1 {
+    background-image: linear-gradient(to right, #5f66e7 40%, #2600fd 100%);
+}
+
+.btn-2 {
+    background-image: linear-gradient(to right, #00bfff 40%, #009eed 100%);
+}
+
+@media screen and (max-width:992px) {
+    .button-section {
+        position: absolute;
+        bottom: 10px;
+        transition: .3s;
+    }
+
+
+}

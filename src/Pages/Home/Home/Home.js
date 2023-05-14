@@ -7,6 +7,7 @@ import Services from '../Services/Services';
 import Banner2 from '../Banner2/Banner2';
 import FlashSale from '../FlashSale/FlashSale';
 import TopSell from '../TopSell/TopSell';
+import SellerOffer from '../../../Shared/SellerOffer/SellerOffer';
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             <Services></Services>
             <FlashSale></FlashSale>
             <CustomerFeedback></CustomerFeedback>
+            <SellerOffer></SellerOffer>
 
         </div>
     );

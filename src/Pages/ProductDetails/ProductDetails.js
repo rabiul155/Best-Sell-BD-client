@@ -30,6 +30,7 @@ const ProductDetails = () => {
                 productId: _id,
                 name: user?.displayName,
                 photo: user?.photoURL,
+                email: user?.email,
                 date: new Date().toLocaleDateString(),
                 review: rev
             }
@@ -127,6 +128,7 @@ const ProductDetails = () => {
                     userReviewData?.map(review => <UserReview
                         key={review._id}
                         reviewData={review}
+                        refetch={refetch}
                     ></UserReview>)
                 }
                 <form onSubmit={handleSubmit} className="input-group w-full">

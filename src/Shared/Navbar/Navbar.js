@@ -62,7 +62,7 @@ const Navbar = () => {
         </>
 
     return (
-        <div className="navbar  z-50  bg-neutral lg:text-neutral-content font-bold">
+        <div className="navbar sticky top-0 z-50  bg-[#060047] lg:text-neutral-content font-bold">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -87,7 +87,7 @@ const Navbar = () => {
                 {
                     user?.uid ?
                         <>
-                            <Link onClick={handleLogOut} className="btn mx-2">LogOut</Link>
+                            <Link onClick={handleLogOut} className="btn bg-[#060047] border-none mx-2">LogOut</Link>
                             {
                                 user?.photoURL ? <img className='rounded-full w-8 h-8 mr-5' src={user.photoURL} alt="" />
                                     :
@@ -97,8 +97,8 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <Link to='/login' className="btn px-2  lg:mx-1">LogIn</Link>
-                            <Link to='/signup' className="btn px-2 lg:mx-1">SignUp</Link>
+                            <Link to='/login' className="btn px-2 bg-[#060047] border-none lg:mx-1">LogIn</Link>
+                            <Link to='/signup' className="btn px-2 bg-[#060047] border-none lg:mx-1">SignUp</Link>
 
                         </>
                 }
