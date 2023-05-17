@@ -7,7 +7,7 @@ const BookingModal = ({ booking, setBooking }) => {
 
     const { user } = useContext(AuthContext);
 
-    const productPrice = `$${resalePrice}`
+    const productPrice = `Tk ${resalePrice}`
 
 
     const handleSubmit = event => {

@@ -6,6 +6,7 @@ import phone from '../../../assets/topSellPhone.jpg'
 import tv from '../../../assets/topSellTv.jpg'
 
 const TopSell = () => {
+
     return (
         <div className='m-4 lg:m-10'>
             <h2 className='mb-10 font-bold text-4xl'>Top Sell Last Month</h2>
@@ -32,8 +33,8 @@ const TopSell = () => {
                             <span className=' text-gray-500 text-sm m-1'>4564</span>
                         </div>
                         <div className=' flex justify-start items-center mt-6'>
-                            <p className=' font-bold text-gray-600 text-xl'>price </p>
-                            <p className='text-3xl mx-2 font-bold  text-[#ff497c]'>$555.0</p>
+                            <p className=' font-bold text-gray-600 text-xl'>price : </p>
+                            <p className='text-xl mx-2 font-bold  text-[#ff497c]'>55500 BDT</p>
                         </div>
                     </div>
                 </div>
@@ -58,8 +59,8 @@ const TopSell = () => {
                             <span className=' text-gray-500 text-sm m-1'>6764</span>
                         </div>
                         <div className=' flex justify-start items-center mt-6'>
-                            <p className=' font-bold text-gray-600 text-xl'>price </p>
-                            <p className='text-3xl mx-2 font-bold  text-[#ff497c]'>$400.0</p>
+                            <p className=' font-bold text-gray-600 text-xl'>price : </p>
+                            <p className='text-xl mx-2 font-bold  text-[#ff497c]'>40000 BDT</p>
                         </div>
                     </div>
                 </div>
@@ -84,8 +85,8 @@ const TopSell = () => {
                             <span className=' text-gray-500 text-sm m-1'>4564</span>
                         </div>
                         <div className=' flex justify-start items-center mt-6'>
-                            <p className=' font-bold text-gray-600 text-xl'>price </p>
-                            <p className='text-3xl mx-2 font-bold  text-[#ff497c]'>$335.0</p>
+                            <p className=' font-bold text-gray-600 text-xl'>price : </p>
+                            <p className='text-xl mx-2 font-bold  text-[#ff497c]'>80350 BDT</p>
                         </div>
                     </div>
                 </div>
@@ -109,8 +110,8 @@ const TopSell = () => {
                             <span className=' text-gray-500 text-sm m-1'>5664</span>
                         </div>
                         <div className=' flex justify-start items-center mt-6'>
-                            <p className=' font-bold text-gray-600 text-xl'>price </p>
-                            <p className='text-3xl mx-2 font-bold  text-[#ff497c]'>$785.0</p>
+                            <p className=' font-bold text-gray-600 text-xl'>price : </p>
+                            <p className='text-xl mx-2 font-bold  text-[#ff497c]'>22000 BDT</p>
                         </div>
                     </div>
                 </div>

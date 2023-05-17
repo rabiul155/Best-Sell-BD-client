@@ -89,11 +89,11 @@ const ProductDetails = () => {
                         </tr>
                         <tr>
                             <th>Orginal Price</th>
-                            <td>{orginalPrice}</td>
+                            <td>Tk {orginalPrice}</td>
                         </tr>
                         <tr>
                             <th>Resale Price</th>
-                            <td>{resalePrice}</td>
+                            <td>Tk {resalePrice}</td>
                         </tr>
 
 

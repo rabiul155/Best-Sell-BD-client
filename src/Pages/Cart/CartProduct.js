@@ -85,7 +85,7 @@ const CartProduct = ({ product, refetch }) => {
     return (
         <div>
 
-            <div className=' m-4'>
+            <div className=' my-4'>
                 <div className=" bg-base-100 shadow-xl p-2 lg:flex justify-between ">
                     <div className=' flex items-center'>
                         <div className="avatar">
@@ -95,7 +95,7 @@ const CartProduct = ({ product, refetch }) => {
                         </div>
                         <div className='px-6'>
                             <h2 className="card-title">{productName}</h2>
-                            <h2 className="card-title">Price : ${resalePrice}</h2>
+                            <h2 className="card-title">Price : Tk {resalePrice}</h2>
                             {/* <p>{about}</p> */}
 
                         </div>
@@ -113,7 +113,7 @@ const CartProduct = ({ product, refetch }) => {
                             </tbody>
                         </table>
 
-                        <h2 className="card-title mx-4">${totalPrice}</h2>
+                        <h2 className="card-title mx-4">Tk {totalPrice}</h2>
                         <button onClick={() => handleDelete()} className=""><FaTrashAlt className=' text-amber-600 text-3xl mx-6'></FaTrashAlt></button>
 
                     </div>

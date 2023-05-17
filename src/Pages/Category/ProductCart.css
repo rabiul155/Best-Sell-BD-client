@@ -18,6 +18,12 @@
 
 }
 
+.card-section:hover .card-img {
+    scale: 1.05;
+
+
+}
+
 
 
 

@@ -114,6 +114,9 @@ const AddProduct = () => {
                             <option selected>laptop</option>
                             <option>monitor</option>
                             <option>phone</option>
+                            <option>car</option>
+                            <option>bike</option>
+                            <option>truck</option>
                         </select>
                     </div>
                     <div className="form-control w-full ">
@@ -168,6 +171,8 @@ const AddProduct = () => {
                             <option selected>1 years</option>
                             <option>2 years</option>
                             <option>3 years</option>
+                            <option>4 years</option>
+                            <option>5 years</option>
                         </select>
                     </div>
                     <div className="form-control w-full">

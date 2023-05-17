@@ -63,11 +63,11 @@ const ProductCard = ({ product, setBooking }) => {
                 </div>
             </div> */}
 
-            <div className=' card-section  hover:shadow-xl rounded-md items-center grid lg:grid-cols-2 gap-4 lg:gap-10 bg-[#f6f7fb] p-4 pb-16 lg:px-10 lg:pt-6 lg:pb-12'>
+            <div className=' card-section  hover:shadow-xl rounded-md items-center grid lg:grid-cols-2 gap-4 lg:gap-6 bg-[#f6f7fb] p-4 pb-16 lg:px-10 lg:pt-6 lg:pb-12'>
                 <div>
                     <div >
                         <div className=" w-full rounded-full">
-                            <img src={picture} alt='laptop' />
+                            <img className='card-img duration-300' src={picture} alt='laptop' />
                         </div>
 
                     </div>
@@ -106,8 +106,8 @@ const ProductCard = ({ product, setBooking }) => {
                         <span className=' text-gray-500 text-sm m-1'>4564</span>
                     </div>
                     <div className=' flex justify-start items-center '>
-                        <p className=' font-bold text-gray-600 text-xl'>price : </p>
-                        <p className='text-3xl mx-2 font-bold  text-[#ff497c]'>${resalePrice} <del className=' text-2xl mx-1 font-semibold text-gray-600 '>${orginalPrice}</del></p>
+                        <p className=' font-bold text-gray-600 text-[18px]'>price :</p>
+                        <p className='text-xl ml-1 font-bold  text-[#ff497c]'>Tk {resalePrice}<del className='text-[16px] ml-1 font-semibold text-gray-600 '>Tk {orginalPrice} </del></p>
                     </div>
                     <div className=" button-section flex justify-end ">
                         <Link to={`/productDetails/${_id}`}> <button className='btn-1 '>View Details</button></Link>

@@ -45,11 +45,20 @@ const Navbar = () => {
 
             <li><Link to='/'>Home</Link></li>
             <li className="dropdown dropdown-hover">
-                <div tabIndex={0} className=" font-bold "><Link>Categories</Link></div>
+                <div tabIndex={0} className=" font-bold "><Link>Electronics</Link></div>
                 <ul tabIndex={0} className="dropdown-content menu p-2 text-black shadow bg-base-100 rounded-box w-52">
                     <li><Link className='w-full' to='/category/laptop'>Laptop</Link></li>
                     <li><Link className='w-full' to='/category/monitor'>Monitor</Link></li>
                     <li><Link className='w-full' to='/category/phone'>Phone</Link></li>
+                </ul>
+            </li>
+            <li className="dropdown dropdown-hover">
+                <div tabIndex={0} className=" font-bold "><Link>Vehicle</Link></div>
+                <ul tabIndex={0} className="dropdown-content menu p-2 text-black shadow bg-base-100 rounded-box w-52">
+                    <li><Link className='w-full' to='/category/car'>Car</Link></li>
+                    <li><Link className='w-full' to='/category/bike'>Bike</Link></li>
+                    <li><Link className='w-full' to='/category/truck'>Truck</Link></li>
+
                 </ul>
             </li>
             <li><Link to='/cart'>Cart<HiOutlineShoppingCart></HiOutlineShoppingCart></Link></li>
