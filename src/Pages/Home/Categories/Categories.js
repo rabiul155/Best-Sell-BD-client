@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import laptop from '../../../assets/laptop.png'
 import monitor from '../../../assets/monitor.png'
 import phone from '../../../assets/phone.png'
+import bike from '../../../assets/bike.jpg'
+import car from '../../../assets/car.jpg'
+import truck from '../../../assets/truck.jpg'
 
 const Categories = () => {
     const categories = [
@@ -21,6 +24,21 @@ const Categories = () => {
             id: 3,
             category: 'phone',
             photo: phone
+        },
+        {
+            id: 4,
+            category: 'bike',
+            photo: bike
+        },
+        {
+            id: 5,
+            category: 'car',
+            photo: car
+        },
+        {
+            id: 6,
+            category: 'truck',
+            photo: truck
         }
     ]
 
@@ -34,7 +52,7 @@ const Categories = () => {
                 {
                     categories.map(category =>
                         <div key={category.id} className=" w-[350px] mx-auto bg-base-100 ">
-                            <figure><img className='bg-lime-50 rounded-lg' src={category.photo} alt="Shoes" /></figure>
+                            <figure><img className='bg-lime-50 rounded-lg h-56' src={category.photo} alt="Shoes" /></figure>
                             <div className="card-actions w-full mt-4">
 
                                 <Link className="btn shadow-lg hover:shadow-slate-400 btn-primary w-full"
