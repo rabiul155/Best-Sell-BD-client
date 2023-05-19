@@ -44,6 +44,7 @@ const Navbar = () => {
         <>
 
             <li><Link to='/'>Home</Link></li>
+            <li><Link to='/allProducts'>AllProducts</Link></li>
             <li className="dropdown dropdown-hover">
                 <div tabIndex={0} className=" font-bold "><Link>Electronics</Link></div>
                 <ul tabIndex={0} className="dropdown-content menu p-2 text-black shadow bg-base-100 rounded-box w-52">

@@ -32,6 +32,11 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>
             },
+            {
+                path: '/allProducts',
+                loader: () => fetch(`https://78-laptop-resalse-server.vercel.app/allProducts`),
+                element: <Category></Category>
+            },
 
             {
                 path: '/signup',

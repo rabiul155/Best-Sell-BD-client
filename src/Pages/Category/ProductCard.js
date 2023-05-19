@@ -63,7 +63,7 @@ const ProductCard = ({ product, setBooking }) => {
                 </div>
             </div> */}
 
-            <div className=' card-section  hover:shadow-xl rounded-md items-center grid lg:grid-cols-2 gap-4 lg:gap-6 bg-[#f6f7fb] p-4 pb-16 lg:px-10 lg:pt-6 lg:pb-12'>
+            <div className=' card-section  hover:shadow-xl rounded-md items-center grid lg:grid-cols-2 gap-4 lg:gap-6 bg-[#f6f7fb] p-4 pb-16 lg:pl-10 lg:pt-6 lg:pb-12'>
                 <div>
                     <div >
                         <div className=" w-full rounded-full">

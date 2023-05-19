@@ -117,6 +117,7 @@ const AddProduct = () => {
                             <option>car</option>
                             <option>bike</option>
                             <option>truck</option>
+                            <option>others</option>
                         </select>
                     </div>
                     <div className="form-control w-full ">
