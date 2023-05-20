@@ -19,6 +19,7 @@ import Statistics from "../Pages/Statistics/Statistics";
 import Summary from "../Pages/Summary/Summary";
 import DashbordRoute from "./DashbordRoute/DashbordRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Payment from "../Pages/Payment/Payment";
 
 
 
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://78-laptop-resalse-server.vercel.app/productDetails/${params._id}`),
                 element: <ProductDetails></ProductDetails>
 
+            },
+            {
+                path: '/payment/success',
+                element: <Payment></Payment>
             }
 
 

@@ -6,6 +6,7 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import useRole from '../../hooks/useRole';
 import { FaUser } from 'react-icons/fa';
+import './Navbar.css'
 
 
 const Navbar = () => {
@@ -84,7 +85,7 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <Link className="btn px-0 lg:px-4 btn-ghost normal-case font-bold text-white text-xl">Best Sell BD</Link>
+                <Link className="nav-text-font btn px-0 lg:px-4 btn-ghost normal-case font-bold text-white text-xl">Best Sell BD</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

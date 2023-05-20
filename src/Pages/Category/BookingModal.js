@@ -20,6 +20,7 @@ const BookingModal = ({ booking, setBooking }) => {
             productName,
             resalePrice,
             location,
+            status: 'unpaid',
             phone,
             picture,
             quantity: 1,

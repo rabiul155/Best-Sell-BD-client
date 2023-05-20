@@ -19,38 +19,28 @@ const Category = () => {
     const [booking, setBooking] = useState(null)
 
 
-    const show = () => {
-
-        console.log(searchText);
-    }
-
 
     useEffect(() => {
-
         if (!searchText) {
             setProducts(allProducts)
             setSearch('')
         }
-
         else if (search) {
             const findProduct = allProducts.filter(product => product.productName.toLowerCase().indexOf(search) !== -1)
             setProducts(findProduct)
         }
-
-
         else {
             setProducts(allProducts)
-
         }
-
     }, [search, allProducts, searchText])
+
+
 
     const handleSearch = (event) => {
         event.preventDefault()
         setSearch(searchText.toLowerCase());
-
-
     }
+
 
     return (
 
@@ -62,11 +52,11 @@ const Category = () => {
 
 
                 <div className=' flex justify-end'>
-                    <select className=" font-bold rounded  w-full lg:w-80 px-4 py-3 mx-4 ">
-                        <option disabled>Sort By</option>
-                        <option>Name</option>
-                        <option>Price</option>
-                        <option>Date</option>
+                    <select className="font-bold rounded  w-full lg:w-80 px-4 py-3 mx-4 ">
+                        <option disabled selected>Sort By</option>
+                        <option value='price'>Name</option>
+                        <option value='price'>Price</option>
+                        <option value='date'>Date</option>
                     </select>
                 </div>
 
@@ -81,9 +71,7 @@ const Category = () => {
                     </form>
                 </div>
 
-                <button onClick={show}>
-                    click
-                </button>
+
 
 
             </div>

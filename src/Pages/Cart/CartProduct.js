@@ -5,7 +5,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider';
 
 const CartProduct = ({ product, refetch }) => {
-    const { _id, productName, picture, resalePrice, quantity } = product;
+    const { _id, productName, picture, resalePrice, quantity, status } = product;
 
     const { user } = useContext(AuthContext);
 
@@ -96,6 +96,7 @@ const CartProduct = ({ product, refetch }) => {
                         <div className='px-6'>
                             <h2 className="card-title">{productName}</h2>
                             <h2 className="card-title">Price : Tk {resalePrice}</h2>
+                            <p className="">Status : {status}</p>
                             {/* <p>{about}</p> */}
 
                         </div>
